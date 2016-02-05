@@ -1,3 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
+<div id="wrapper">
+	<div id="navigationWrapper">
+		{{partial "navigation"}}
+	</div>	
+	<div id="contentWrapper">
+		
 
-{{outlet}}
+		{{liquid-outlet}}
+	</div>	
+
+	<!-- Orientation Alert -->
+	<div id="orientation-warning">
+		<td>Rotate screen biatch</td>
+	</div>
+</div>
