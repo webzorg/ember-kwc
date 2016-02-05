@@ -1,36 +1,39 @@
 
 {{#product-accordion id="productAccordion"}}
 	<article class="accordion">
-		<section id="acc1">
-			<h2><a href="products#acc1">Bottled</a></h2>
-			<div id="slickWrapper">
-				{{#slick-slider 
-					slidesToShow=5
-					responsive=breakpoints
-					arrows=false
-					autoplay=true
-					speed=200
-					swipeToSlide=true
-					touchThreshold=50
-					rows=2
-				}}
-					{{#each model as |productUnit|}}
-						{{product-listing product=productUnit}}
-				  	{{/each}}
-				{{/slick-slider}}
-			</div>
-		</section>
-		
-		<section id="acc2">
-			<h2><a href="products#acc2">Qvevri</a></h2>
-			<p>This content appears on page 2.</p>
-		</section>
-		
-		<section id="acc3">
-			<h2><a href="products#acc3">Spirits</a></h2>
-			<p>This content appears on page 3.</p>
-		</section>
-
+		<a href="products#acc1">
+			<section id="acc1">
+				<h2>Bottled</h2>
+				<div id="slickWrapper">
+					{{#slick-slider 
+						slidesToShow=5
+						responsive=breakpoints
+						arrows=false
+						autoplay=true
+						speed=200
+						swipeToSlide=true
+						touchThreshold=50
+						rows=2
+					}}
+						{{#each model as |productUnit|}}
+							{{product-listing product=productUnit}}
+					  	{{/each}}
+					{{/slick-slider}}
+				</div>
+			</section>
+		</a>
+		<a href="products#acc2">
+			<section id="acc2">
+				<h2>Qvevri</h2>
+				<p>This content appears on page 2.</p>
+			</section>
+		</a>
+		<a href="products#acc3">
+			<section id="acc3">
+				<h2>Spirits</h2>
+				<p>This content appears on page 3.</p>
+			</section>
+		</a>
 	</article>	
 {{/product-accordion}}
 
