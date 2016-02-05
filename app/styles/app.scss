@@ -5,6 +5,7 @@
 $primaryRed:red;
 $primaryGray:gray;
 $primaryGold:gold;
+
 $navigationWrapperWidthDesktop:10%;
 $contentWrapperWidthDesktop:90%;
 $navigationWrapperWidthMobile:20%;
@@ -19,7 +20,7 @@ $navigationFontSize:1.1em;
 $mediumNavigationFontSize:1.45em;
 $smallNavigationFontSize:1.3em;
 
-$productImageWidth:30%;
+$productImageWidth:27%;
 $mediumProductImageWidth:28%;
 $smallProductImageWidth:27%;
 
@@ -75,23 +76,21 @@ body{
 	position:relative;
 	width:$contentWrapperWidthDesktop;
 	height:50%;
-	margin:0px auto 0px $navigationWrapperWidthDesktop;
+	min-height: 17em;
 	top:50%;
+	margin:0 auto 0 $navigationWrapperWidthDesktop;
+	background-color: rgba(100,100,100,0.5);
 	transform: translateY(-50%);
 
 	:first-child{
 	    height:100%;
 	}
-	background-color: rgba(0,0,255,0.5);
 	
 } 
-#slickWrapper{
-  background-color:red;
-}
 /* Products route */
 #slickWrapper{
 
-	margin:5% 0px 5% 0px;
+	margin:0.5em 0px 0em 0px;
 	display:none;
 }
 .product-index-img{
@@ -99,7 +98,6 @@ body{
 	width:$productImageWidth;
 }
 .product-index-div{
-	margin-left:0px, 20px, 0px, 20px;
 	text-align: center;
 }
 .product-index-div h3{
@@ -110,12 +108,11 @@ body{
 
 article.accordion
 {
+	width:80%;
 	display:block;
 	margin: 0 auto;
 	background-color: #666;
 	overflow: auto;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-	border:1px solid red;
 }
 
 article.accordion section
@@ -128,17 +125,15 @@ article.accordion section
 	color: #333;
 	background-color: #333;
 	overflow: hidden;
-	border:1px solid gold;
 }
 
 
 article.accordion section h2
 {
 	position: absolute;
-	font-size: 1em;
+	font-size: 1.5em;
 	font-weight: bold;
-	top:50%;
-
+	top:60%;
 	left: 1em;
 	padding: 0;
 	margin: 0;
@@ -215,6 +210,19 @@ article.accordion section h2
 	#contentWrapper{
 		width:$contentWrapperWidthMobile;
 		margin:0px auto 0px $navigationWrapperWidthMobile;
+		article.accordion{
+			width:100%;
+		}
+		#slickWrapper{
+			margin:1em 0px 0em 0px;
+		}
+		article.accordion section h2{
+			position: absolute;
+			font-size: 1em;
+			font-weight: bold;
+			top:55%;
+			left: 0.5em;
+		}
 	}
 	#navigationWrapper{
 		width:$navigationWrapperWidthMobile;
@@ -225,7 +233,6 @@ article.accordion section h2
 				}
 			}
 		}
-
 	}	
 }
 /* Medium and up */

@@ -3,15 +3,15 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	breakpoints: [
         {
-          'breakpoint': 768,
+          'breakpoint': 1024,
           'settings': {
-            'slidesToShow': 3
+            'slidesToShow': 4
           }
         },
         {
-          'breakpoint': 460,
+          'breakpoint': 768,
           'settings': {
-            'slidesToShow': 1
+            'slidesToShow': 3
           }
         }
     ]
