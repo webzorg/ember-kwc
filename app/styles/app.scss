@@ -1,6 +1,8 @@
 @import "settings";
 @import 'foundation';
 @include foundation-everything;
+//@import 'bower_components/photoswipe/src/css/main';
+//@import 'bower_components/photoswipe/src/css/default-skin/default-skin';
 
 $primaryRed:red;
 $primaryGray:gray;
@@ -24,9 +26,6 @@ $productImageWidth:27%;
 $mediumProductImageWidth:28%;
 $smallProductImageWidth:27%;
 
-html {
-	
-}
 body{
 	background-image: url(/assets/bg.jpg);	
 	background-size: cover;
@@ -241,22 +240,17 @@ article.accordion section h2
 	}	
 }
 /* Large and up */
-@media screen and (min-width: 64em) {
-	article.accordion section h2:hover{
-	
-		
-			top:48%;
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			transform: rotate(0deg);
-			color:$primaryRed;
-		
-	}
-}
+@media screen and (min-width: 64em) {}
 /* Large only */
 @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+
+
+
+
+
+
+
 
 
 

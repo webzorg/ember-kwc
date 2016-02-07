@@ -9,6 +9,9 @@ module.exports = function(defaults) {
       'foundationJs': 'all'
     }
   });
+  //app.import('bower_components/photoswipe/dist/photoswipe.js');
+  //app.import('bower_components/photoswipe/dist/photoswipe-ui-default.min.js');
+    
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
