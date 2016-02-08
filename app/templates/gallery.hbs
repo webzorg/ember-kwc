@@ -1,10 +1,9 @@
 {{outlet}}
 
 {{#photo-swipe}}
-  <a class="photo-item" href="/assets/images/thumb/01.png" data-width="600" data-height="400">
-    <img src="/assets/images/thumb/01.png" >
-  </a>
-  <a class="photo-item" href="/assets/images/thumb/02.png" data-width="600" data-height="400">
-    <img src="/assets/images/thumb/02.png" >
-  </a>
+	{{#each model as |productUnit|}}
+	  <a class="photo-item" href="{{productUnit.src}}" data-width="800" data-height="700">
+	    	<img src="{{productUnit.src}}" >
+	  </a>
+	{{/each}}
 {{/photo-swipe}}

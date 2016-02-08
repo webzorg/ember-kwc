@@ -1,10 +1,14 @@
 
 {{#product-accordion id="productAccordion"}}
 	<article class="accordion">
-		<a href="products#acc1">
+		
 			<section id="acc1">
+			<a href="products#acc1">
 				<h2>Bottled</h2>
+			</a>
+				<!--
 				<div id="slickWrapper">
+				 
 					{{#slick-slider 
 						slidesToShow=5
 						responsive=breakpoints
@@ -18,22 +22,23 @@
 						{{#each model as |productUnit|}}
 							{{product-listing product=productUnit}}
 					  	{{/each}}
-					{{/slick-slider}}
+					{{/slick-slider}}			
 				</div>
+				-->
 			</section>
-		</a>
-		<a href="products#acc2">
 			<section id="acc2">
-				<h2>Qvevri</h2>
-				<p>This content appears on page 2.</p>
-			</section>
-		</a>
-		<a href="products#acc3">
+				<a href="products#acc2">
+					<h2>Qvevri</h2>
+					<p>This content appears on page 2.</p>
+				</a>
+			</section>	
+		
 			<section id="acc3">
-				<h2>Spirits</h2>
-				<p>This content appears on page 3.</p>
-			</section>
-		</a>
+				<a href="products#acc3">
+					<h2>Spirits</h2>
+					<p>This content appears on page 3.</p>
+				</a>
+			</section>	
 	</article>	
 {{/product-accordion}}
 

@@ -181,7 +181,7 @@ this.get('/photos', function() {
   return {
     data: [{
       type: 'photo', 
-      id: 20,
+      id: 1,
       attributes: {        
         src: 'http://placekitten.com/g/600/450',
         w: 600, h: 450,
@@ -189,7 +189,7 @@ this.get('/photos', function() {
       }
     }, {
       type: 'photo', 
-      id: 21,
+      id: 2,
       attributes: {
         src: 'http://placekitten.com/630/600',
         w: 630, h: 600,
@@ -197,7 +197,7 @@ this.get('/photos', function() {
       }
     }, {
       type: 'photo', 
-      id: 22,
+      id: 3,
       attributes: {
         src: 'http://placekitten.com/g/450/450',
         w: 450, h: 450,
@@ -205,7 +205,7 @@ this.get('/photos', function() {
       }
     }, {
       type: 'photo', 
-      id: 23,
+      id: 4,
       attributes: {
         src: 'http://placekitten.com/g/400/600',
         w: 400, h: 600,
@@ -213,7 +213,7 @@ this.get('/photos', function() {
       }
     }, {
       type: 'photo', 
-      id: 24,
+      id: 5,
       attributes: {
         src: 'http://placekitten.com/g/500/400',
         w: 500, h: 400,
