@@ -1,9 +1,9 @@
-{{outlet}}
-
-{{#photo-swipe}}
-	{{#each model as |productUnit|}}
-	  <a class="photo-item" href="{{productUnit.src}}" data-width="800" data-height="700">
-	    	<img src="{{productUnit.src}}" >
-	  </a>
-	{{/each}}
-{{/photo-swipe}}
+<div id="galleryWrapper" >
+	 {{#photo-swipe}}
+		{{#each model as |productUnit|}}
+		  <a class="photo-item" href="{{productUnit.src}}" data-width="500" data-height="500">
+		    	<img src="{{productUnit.src}}" class="gallery-thumb" >
+		  </a>
+		{{/each}}
+	{{/photo-swipe}}
+</div>
