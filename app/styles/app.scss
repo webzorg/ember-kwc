@@ -35,7 +35,6 @@ body{
 	position:absolute;
 	width:100%;
 	height:100%;
-	padding:10px;
 }
 #navigationWrapper{
 	font-size:$navigationFontSize;
@@ -85,12 +84,7 @@ body{
 	margin:0 auto 0 $navigationWrapperWidthDesktop;
 	background-color: rgba(100,100,100,0.5);
 	.liquid-child{
-		height:inherit;
-
-			box-shadow: 2px 2px 5px #000;
-		.accordion-component{
-			height:100%;
-		}
+		height:100%;
 	}
 } 
 
@@ -105,7 +99,9 @@ body{
 	width:$productImageWidth;
 }
 .product-index-div{
-	text-align: center;
+	border:1px solid green;
+	float:left;
+	width:100px;
 }
 .product-index-div h3{
 	margin:0 auto;
