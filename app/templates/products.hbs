@@ -8,14 +8,14 @@
 		{{/each}}
 
 
-		{{! app/templates/components/my-select.hbs}}
 		<select {{action 'change' on='change'}}>
-		  {{#each content key="@index" as |item|}}
-		    <option value="{{item}}" selected={{is-equal item selectedValue}}>
-		      {{item}}
-		    </option>
-		  {{/each}}
+			{{#each productsBottle as |item|}}
+				<option value="{{item.name}}" selected={{is-equal item.name selectedItem.name}}>
+					{{item.name}}
+				</option>
+			{{/each}}
 		</select>
+		
 
 
 	</section>
