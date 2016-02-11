@@ -1,27 +1,43 @@
 <article class="accordion">
-	
-		<section id="acc1">
-		<a href="products#acc1">
+	<section id="product-1">
+		<a href="products#product-1">
 			<h2>Bottled</h2>
 		</a>
+		{{#each productsBottle as |p|}}
+			{{product-listing product=p}}
+		{{/each}}
 
-			{{#each model as |productUnit|}}
-				{{product-listing product=productUnit}}
-			{{/each}}
-		</section>
-		<section id="acc2">
-			<a href="products#acc2">
-				<h2>Qvevri</h2>
-				<p>This content appears on page 2.</p>
-			</a>
-		</section>	
-	
-		<section id="acc3">
-			<a href="products#acc3">
-				<h2>Spirits</h2>
-				<p>This content appears on page 3.</p>
-			</a>
-		</section>	
+
+		{{! app/templates/components/my-select.hbs}}
+		<select {{action 'change' on='change'}}>
+		  {{#each content key="@index" as |item|}}
+		    <option value="{{item}}" selected={{is-equal item selectedValue}}>
+		      {{item}}
+		    </option>
+		  {{/each}}
+		</select>
+
+
+	</section>
+	<section id="product-2">
+		<a href="products#product-2">
+			<h2>Qvevri</h2>
+			<p>This content appears on page 2.</p>
+		</a>
+		{{#each productsQvevri as |p|}}
+			{{product-listing product=p}}
+		{{/each}}
+	</section>	
+
+	<section id="product-3">
+		<a href="products#product-3">
+			<h2>Spirits</h2>
+			<p>This content appears on page 3.</p>
+		</a>
+		{{#each productsSpirit as |p|}}
+			{{product-listing product=p}}
+		{{/each}}
+	</section>	
 </article>	
 
 {{outlet}}
