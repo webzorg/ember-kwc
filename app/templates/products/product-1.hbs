@@ -1,0 +1,13 @@
+<select {{action 'change' on='change'}}>
+	{{#each bottle_unique_ptype2 as |item|}}
+		<option value="{{item.name}}" selected={{is-equal item.name selectedItem.name}}>
+			{{item}}
+		</option>
+	{{/each}}
+</select>
+			
+{{#each productsBottleAllArray as |p|}}
+	{{product-listing product=p}}
+{{/each}}
+
+{{outlet}}

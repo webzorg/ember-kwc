@@ -9,7 +9,8 @@ module.exports = function(defaults) {
       'foundationJs': 'all'
     }
   });
-  //app.import('bower_components/photoswipe/dist/photoswipe.js');
+
+  app.import('bower_components/jquery.kwicks/jquery.kwicks.min.js');
   //app.import('bower_components/photoswipe/dist/photoswipe-ui-default.min.js');
     
 

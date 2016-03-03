@@ -222,7 +222,7 @@ this.get('/photos', function() {
       id: 1,
       attributes: {        
         src: 'http://placekitten.com/g/600/450',
-        w: 600, h: 450,
+        w: 10, h: 15,
         title: 'Image Description'
       }
     }, {
