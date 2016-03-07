@@ -1,7 +1,14 @@
 import Ember from 'ember';
+import productCategoriesMixin from 'kwc/mixins/product-categories';
 
-export default Ember.Controller.extend({
-	productsSpiritAllArray: Ember.computed.filterBy('model', 'ptype', 'productsSpirit'),
-	ptype2: Ember.computed.mapBy('productsSpiritAllArray', 'ptype2'),
-	spirit_unique_ptype2: Ember.computed.uniq('ptype2'),
+export default Ember.Controller.extend(productCategoriesMixin, {
+	productFilterValue: 'productsSpirit',
+
+	selectedType: null,
+	actions: {
+	    selectProductType(selectedTypeTemp) {
+	      	this.set('selectedType', selectedTypeTemp);
+	      	this.set('productFilterValue2', selectedTypeTemp);
+	    }
+	}
 });

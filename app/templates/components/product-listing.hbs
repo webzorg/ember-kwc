@@ -1,6 +1,15 @@
-<div class="products-index">
+<div class="products-index" {{action "toggleModal"}}>
 	<img src="{{product.thumb}}" alt="" class="products-index-img">
 	<div class="products-index-div">
 		<span class="products-index-span">{{product.name}}</span>
 	</div>
 </div>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+                  translucentOverlay=true
+                  }}
+    <img src="{{product.thumb}}" alt="" style="width:100px; float:left;">
+    {{product.description}}
+  {{/modal-dialog}}
+{{/if}}

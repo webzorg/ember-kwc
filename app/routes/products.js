@@ -13,11 +13,6 @@ export default Ember.Route.extend({
 			    duration: 600,
 			});
 		});
-	},
-	actions: {
-	    change() {
-	      console.log("product route action");
-	      
-	    }
 	}
+
 });
