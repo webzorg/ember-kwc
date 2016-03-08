@@ -30,9 +30,13 @@ export default Mixin.create({
 		productFilterValue2
 	} = this.getProperties('filteredProducts', 'productFilterKey2', 'productFilterValue2');
 		if(productFilterValue2!=null)
+		{
 			return filteredProducts.filterBy(productFilterKey2, productFilterValue2);
+		}
 		else
-			return filteredProducts
+		{
+			return filteredProducts;
+		}
 	})
 	
 
