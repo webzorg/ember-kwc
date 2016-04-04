@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 				behavior: 'menu',
 			    maxSize: '75%',
 			    spacing: 0,
-			    duration: 600,
+			    duration: 800,
 			});
 		});
 	}
