@@ -18,42 +18,42 @@ export default function(){
   //loading transition
   this.transition(
     this.fromRoute('loading'),
-    this.toRoute(['index','products', 'gallery', 'about', 'contact']),
+    this.toRoute(['index','products', 'news', 'about', 'awards']),
     this.use('crossFade', {duration:500})
   );
 
   //from index
   this.transition(
     this.fromRoute('index'),
-    this.toRoute(['products', 'gallery', 'about', 'contact']),
-    this.use(transition_lvl_1_1),
-    this.reverse(transition_lvl_1_2)
-  );
-  //from products
-  this.transition(
-    this.fromRoute('products'),
-    this.toRoute(['index', 'gallery', 'about', 'contact']),
-    this.use(transition_lvl_1_1),
-    this.reverse(transition_lvl_1_2)
-  );
-  //from gallery
-  this.transition(
-    this.fromRoute('gallery'),
-    this.toRoute(['index', 'products', 'about', 'contact']),
+    this.toRoute(['products', 'news', 'about', 'awards']),
     this.use(transition_lvl_1_1),
     this.reverse(transition_lvl_1_2)
   );
   //from about
   this.transition(
     this.fromRoute('about'),
-    this.toRoute(['index', 'products', 'gallery', 'contact']),
+    this.toRoute(['index', 'products', 'news', 'awards']),
     this.use(transition_lvl_1_1),
     this.reverse(transition_lvl_1_2)
   );
-  //from contact
+  //from products
   this.transition(
-    this.fromRoute('contact'),
-    this.toRoute(['index', 'products', 'gallery', 'about']),
+    this.fromRoute('products'),
+    this.toRoute(['index', 'news', 'about', 'awards']),
+    this.use(transition_lvl_1_1),
+    this.reverse(transition_lvl_1_2)
+  );
+  //from news
+  this.transition(
+    this.fromRoute('news'),
+    this.toRoute(['index', 'products', 'about', 'awards']),
+    this.use(transition_lvl_1_1),
+    this.reverse(transition_lvl_1_2)
+  );
+  //from awards
+  this.transition(
+    this.fromRoute('awards'),
+    this.toRoute(['index', 'products', 'news', 'about']),
     this.use(transition_lvl_1_1),
     this.reverse(transition_lvl_1_2)
   );

@@ -6,15 +6,21 @@
 //@import 'bower_components/photoswipe/src/css/main';
 //@import 'bower_components/jquery.kwicks/jquery.kwicks.min.css';
 
-$primaryRed:red;
-$primaryGray:#666666;
-$primaryGold:gold;
+$primaryRed:#BE0A1C;
+$primaryBlack:#1A171B;
+$primaryLightGray:#DCDCDC;
+$primaryDarkGray:#878787;
+$primaryGradient:#EDEDED;
 
-$desktopNavigation:10%;
-$desktopContent:90%;
+$desktopLeftBuffer:7%;
+$desktopTopBuffer:0%;
+$desktopContentWidth:100%-$desktopLeftBuffer;
+$desktopContentHeight:100%-$desktopTopBuffer;
 
-$mobileNavigation:17%;
-$mobileContent:83%;
+$mobileLeftBuffer:15%;
+$mobileTopBuffer:0%;
+$mobileContentWidth:100%-$mobileLeftBuffer;
+$mobileContentHeight:100%-$mobileTopBuffer;
 
 $fontSize:1em;
 $smallFontSize:1em;
@@ -34,6 +40,30 @@ body{
 	background-size: cover;
 	background-repeat:no-repeat;
 }
+#loader{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-color:#888;
+	z-index: 100;
+}
+#loader-bg{
+	width:100%; 
+	height:100%; 
+	position:fixed;
+	background-color:rgba(200,200,200,0.5);
+}
+#loader-gif{
+	position:inherit; 
+	top:50%; 
+	left:50%; 
+	transform: translate(-50%,-50%); 
+}
+#logoWrapper{
+	img{
+		width:95%;
+	}
+}
 #wrapper{
 	position:absolute;
 	width:100%;
@@ -45,7 +75,7 @@ body{
 	top:0px;
 	left:0px;
 	height:100%;	
-	width:$desktopNavigation;
+	width:$desktopLeftBuffer;
 	background-color:#ccc;
 	overflow:hidden;
 	/* nav menu */
@@ -62,8 +92,7 @@ body{
 		li{
 			padding:0px 0px 0px 0px;			
 			height:20%;
-			width:100%;
-			border:1px solid $primaryGold;	
+			width:100%;	
 			display:table;
 			a{
 				display:table-cell;
@@ -71,16 +100,19 @@ body{
 				text-align: center;
 			}
 			.active{
-				color:red;
+				color:$primaryRed;
+				-webkit-box-shadow: inset 0px 0px 15px 10px rgba(237,237,237,0.75);
+				-moz-box-shadow: inset 0px 0px 15px 10px rgba(237,237,237,0.75);
+				box-shadow: inset 0px 0px 15px 10px rgba(237,237,237,0.75);
 			}
 		}
 	}
 }
 
 #liquid1{
-	height:100%;
+	height:$desktopContentHeight;
 	min-height: 17em;
-	margin:0 auto 0 $desktopNavigation;
+	margin:$desktopTopBuffer/2 0 0 $desktopLeftBuffer;
 	background-color: rgba(100,100,100,0.3);
 	.liquid-child{
 		height:100%;
@@ -114,7 +146,7 @@ body{
 }
 .products-index-span{
 	font-size:1em;
-	color:$primaryGold;
+	color:$primaryRed;
 }
 
 .kwicks {
@@ -131,7 +163,7 @@ body{
 		span{
 			position:inherit;
 			font-size:2.5em;
-			color:$primaryGold;
+			color:$primaryRed;
 			padding: 0em 0.5em;
 			line-height: 1em;
 			border-radius:1em;
@@ -182,6 +214,12 @@ body{
 	}
 }
 
+.productModal{
+	width:50%;
+	position:fixed !important;
+	left:0px;
+
+}
 //////////////////////////////////////////////////////////
 #liquid2_products{
 	//-webkit-transition: all 1s ease;
@@ -190,7 +228,6 @@ body{
 	//-o-transition: all 1s ease;
 	//transition: all 1s ease;
 }
-
 /***********************/
 
 /* Gallery route */
@@ -226,12 +263,12 @@ body{
 
 
 	#liquid1{
-		width:$mobileContent;
-		margin:0px auto 0px $mobileNavigation;
+		width:$mobileContentWidth;
+		margin:$mobileTopBuffer auto 0px $mobileLeftBuffer;
 	}
 	#navigationWrapper{
-		width:$mobileNavigation;
-	}	
+		width:$mobileLeftBuffer;
+	}
 }
 /* Medium and up */
 @media screen and (min-width: 40em) {}
@@ -271,17 +308,17 @@ body{
 
 //ember-power-select options
 //Backgrounds
-$ember-power-select-background-color: $primaryGray !default;
-$ember-power-select-highlighted-background: $primaryGold !default;
-$ember-power-select-selected-background: $primaryGray !default;
+$ember-power-select-background-color: $primaryDarkGray !default;
+$ember-power-select-highlighted-background: $primaryRed !default;
+$ember-power-select-selected-background: $primaryDarkGray !default;
 
 //Texts
-$ember-power-select-text-color: $primaryGold !default;
-$ember-power-select-placeholder-color: $primaryGold !default;
+$ember-power-select-text-color: $primaryRed !default;
+$ember-power-select-placeholder-color: $primaryRed !default;
 $ember-power-select-highlighted-color: $primaryRed !default;
 
 //Borders
-$ember-power-select-border-color: $primaryGold !default;
+$ember-power-select-border-color: $primaryRed !default;
 $ember-power-select-focus-border-color: $ember-power-select-border-color !default;
 $ember-power-select-default-border: 2px solid $ember-power-select-border-color !default;
 $ember-power-select-default-focus-border: 2px solid $ember-power-select-focus-border-color !default;

@@ -12,7 +12,6 @@
     "pretender": "~0.10.1",
     "Faker": "~3.0.0",
     "slick-carousel": "^1.5.9",
-    "jquery.kwicks": "^2.2.1",
-    "photoswipe": "4.1.0"
+    "jquery.kwicks": "^2.2.1"
   }
 }

@@ -6,14 +6,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+    this.route('about');
     this.route('products', function(){
       this.route('product-1');
       this.route('product-2');
       this.route('product-3');
     });
-    this.route('gallery');
-    this.route('about');
-    this.route('contact');
+    this.route('news');
+    this.route('awards');
 });
 
 export default Router;

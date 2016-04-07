@@ -7,7 +7,9 @@
 
 {{#if isShowingModal}}
   {{#modal-dialog close="toggleModal"
-                  translucentOverlay=true
+                  translucentOverlay=false
+                  renderInPlace=true
+                  container-class="productModal"
                   }}
     <img src="{{product.thumb}}" alt="" style="width:100px; float:left;">
     {{product.description}}
