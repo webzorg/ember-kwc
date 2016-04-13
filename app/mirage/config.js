@@ -215,6 +215,8 @@ this.get('/products', function() {
   };
 });
 
+}
+/*
 this.get('/photos', function() {
   return {
     data: [{
@@ -260,6 +262,8 @@ this.get('/photos', function() {
     }]
   };
 });
+*/
+
 
   // These comments are here to help you get started. Feel free to delete them.
 
@@ -333,7 +337,7 @@ this.get('/photos', function() {
     });
 
   */
-}
+
 
 /*
 You can optionally export a config that is only loaded during tests
