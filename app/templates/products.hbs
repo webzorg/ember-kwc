@@ -1,41 +1,18 @@
-<!-- 
-<div class="accordion">
-	{{#link-to 'products.product-1'}}
-		<div class="accordionSection" id="acc1">
-				<h2>Bottled</h2>
-		</div>
-	{{/link-to}}
-	{{#link-to 'products.product-2'}}
-		<div class="accordionSection" id="acc2">
-			<h2>Qvevri</h2>		
-		</div>
-	{{/link-to}}
-	{{#link-to 'products.product-3'}}
-		<div class="accordionSection" id="acc3">
-			<h2>Spirits</h2>
-		</div>
-	{{/link-to}}
-</div>
 
--->
 <div class='kwicks kwicks-horizontal'>
-	<div class="products-section" id="products-section-1">
-		{{#link-to 'products.product-1' id="productsSpan1" class="products-section-heading"}}
-	    	<span>Bottled</span>
-		{{/link-to}}
+	<div class="products-section" id="products-section-1" {{action 'switchProductSection' 'products-section-1' 'products.product-1'}}>
+	    <!-- <span id="productsSpan1" class="products-section-heading">Bottled</span> -->
 	</div>
-    <div class="products-section" id="products-section-2">
-		{{#link-to 'products.product-2' id="productsSpan2" class="products-section-heading"}}
-			<span>Qvevri</span>
-		{{/link-to}}
+    <div class="products-section" id="products-section-2" {{action 'switchProductSection' 'products-section-2' 'products.product-2'}}>
 	</div>
-	<div class="products-section" id="products-section-3">
-		{{#link-to 'products.product-3' id="productsSpan3" class="products-section-heading" }}
-			<span>Spirits</span>
-		{{/link-to}}
+	<div class="products-section" id="products-section-3" {{action 'switchProductSection' 'products-section-3' 'products.product-3'}}>
+
 	</div>
 </div>
+	    
 
-    
-
-{{liquid-outlet id="liquid2_product"}}
+{{#if isWormholeEnabled}}
+	{{#ember-wormhole to=productsDestination}}
+		{{liquid-outlet id="liquid2_product"}}
+	{{/ember-wormhole}}
+{{/if}}

@@ -35,7 +35,6 @@ $productWrapperWidthMedium:24%;
 $productImageWidth:50%;
 $productImageWidthMedium:100%;
 
-
 #loader{
 	position:absolute;
 	height:100%;
@@ -60,6 +59,9 @@ $productImageWidthMedium:100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    border-style: solid;
+    border-width: 0.2em 0.1em 0.5em 0.2em;
+    border-color: $primaryLightGray;
 }
 #wrapper{
 	position:absolute;
@@ -68,16 +70,14 @@ $productImageWidthMedium:100%;
 } 
 #banner{
 	position:absolute;
-	top:0px;
 	left:$desktopLeftBuffer;
 	height:$desktopTopBuffer;
 	width:$desktopContentWidth;
-	text-align: center;
-
-	display:inline-block;
+	display:table;
 	span{
+		text-align: center;
 		font-size:1.5em;
-		display:inline-block;
+		display:table-cell;
 		vertical-align: middle;
 	}
 }
@@ -92,6 +92,12 @@ $productImageWidthMedium:100%;
 	overflow:hidden;
 	/* nav menu */
 	ul {
+		:not(:first-child) {	
+   			background-image: url("/assets/nav_item_decor.png");
+			background-repeat: no-repeat;
+			background-position: 50% 10%;
+			background-size: 15%;
+		}
 		list-style-type: none;
 		padding:0px;
 		margin:0px;
@@ -172,37 +178,39 @@ $productImageWidthMedium:100%;
     width: 100%;
     height: 100%;
     .products-section{
-    	height:100%;	
+    	height:inherit;	
     }
+    /*
     //section headings span 
 	.products-section-heading{
 		position:absolute;
-		height:100%;
-		width:100%;
-		span{
-			position:inherit;
-			font-size:2.5em;
-			color:$primaryRed;
-			padding: 0em 0.5em;
-			line-height: 1em;
-			border-radius:1em;
-			background-color: rgba(255,215,0,0.2);
-			top:50%;
-			left:50%;
-			-webkit-transform: translate(-50%, -50%) rotate(-90deg);
-			-moz-transform: translate(-50%, -50%) rotate(-90deg);
-			-ms-transform: translate(-50%, -50%) rotate(-90deg);
-			-o-transform: translate(-50%, -50%) rotate(-90deg);
-			transform: translate(-50%, -50%) rotate(-90deg);
-		}
-	}
+		font-size:2.5em;
+		color:$primaryRed;
+		padding: 0em 0.5em;
+		line-height: 1em;
+		border-radius:1em;
+		background-color: rgba(255,215,0,0.2);
+		top:50%;
+		left:50%;
+		-webkit-transform: translate(-50%, -50%) rotate(-90deg);
+		-moz-transform: translate(-50%, -50%) rotate(-90deg);
+		-ms-transform: translate(-50%, -50%) rotate(-90deg);
+		-o-transform: translate(-50%, -50%) rotate(-90deg);
+		transform: translate(-50%, -50%) rotate(-90deg);
+		
+	}*/
 }
 .kwicks.kwicks-processed > * {
 	margin: 0;
 	position: absolute;
 }
 
-#products-section-1 { background-color: rgba(55,0,0,0.5); overflow:auto;}
+#products-section-1 { 
+	background-image: url("/assets/images/thumb/12.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
 #products-section-2 { background-color: rgba(0,55,0,0.5); overflow:auto;}
 #products-section-3 { background-color: rgba(0,0,55,0.5); overflow:auto;}
 
@@ -227,7 +235,7 @@ $productImageWidthMedium:100%;
 			transform: translateY(45%);
 		}
 	}
-	//hide bottle name and select box on collapse
+	//hide bottle name && select_box of collapsed section
 	.products-index-span, .ember-power-select{
 		display:none;
 	}
@@ -269,8 +277,14 @@ $productImageWidthMedium:100%;
 	#navigationWrapper{
 		font-size:$smallNavigationFontSize;
 	}
-	#navigationWrapper{
-		//background-color: red;
+	$mobileTopBuffer:0%;
+	$mobileContentHeight:100%;
+	#banner{
+		display:none;
+	}
+	#liquid1{
+		top:$mobileTopBuffer !important;
+		height:$mobileContentHeight !important;
 	}
 }
 /* Small & Medium */

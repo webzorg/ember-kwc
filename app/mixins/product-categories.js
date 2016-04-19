@@ -38,7 +38,5 @@ export default Mixin.create({
 			return filteredProducts;
 		}
 	})
-	
-
 
 });

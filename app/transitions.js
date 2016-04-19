@@ -1,7 +1,7 @@
 export default function(){
 	let transition_lvl_1_1 = 'toRight';
   let transition_lvl_1_2 = 'toLeft';
-  let transition_lvl_2 = 'scale';
+  let transition_lvl_2 = 'toDown';
   //let duration = 600;
   /*
   toLeft, toRight, toUp, toDown
@@ -13,7 +13,6 @@ export default function(){
     scale
     wait this.use('wait', 1000, { then: 'fade' })
 */
-  let wait = 250;
 
   //loading transition
   this.transition(
@@ -61,17 +60,17 @@ export default function(){
   this.transition(
     this.fromRoute('products.product-1'),
     this.toRoute(['products.product-2', 'products.product-3']),
-    this.use('wait', wait, {then: transition_lvl_2 })
+    this.use(transition_lvl_2)
   );
   this.transition(
     this.fromRoute('products.product-2'),
     this.toRoute(['products.product-1', 'products.product-3']),
-    this.use('wait', wait, {then: transition_lvl_2 })
+    this.use(transition_lvl_2)
   );
   this.transition(
     this.fromRoute('products.product-3'),
     this.toRoute(['products.product-1', 'products.product-2']),
-    this.use('wait', wait, {then: transition_lvl_2 })
+    this.use(transition_lvl_2)
   );
 
 }
