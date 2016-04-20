@@ -1,7 +1,7 @@
 export default function(){
 	let transition_lvl_1_1 = 'toRight';
   let transition_lvl_1_2 = 'toLeft';
-  let transition_lvl_2 = 'toDown';
+  //let transition_lvl_2 = 'crossFade';
   //let duration = 600;
   /*
   toLeft, toRight, toUp, toDown
@@ -56,7 +56,7 @@ export default function(){
     this.use(transition_lvl_1_1),
     this.reverse(transition_lvl_1_2)
   );
-
+/*
   this.transition(
     this.fromRoute('products.product-1'),
     this.toRoute(['products.product-2', 'products.product-3']),
@@ -72,5 +72,5 @@ export default function(){
     this.toRoute(['products.product-1', 'products.product-2']),
     this.use(transition_lvl_2)
   );
-
+*/
 }
