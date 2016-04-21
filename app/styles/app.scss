@@ -36,6 +36,13 @@ $productWrapperWidthMedium:24%;
 $productImageWidth:50%;
 $productImageWidthMedium:100%;
 
+@font-face {
+    font-family: eng;
+    src: url(/assets/eng_font.ttf);
+}
+body{
+	font-family: eng;
+}
 #loader{
 	position:absolute;
 	height:100%;
@@ -123,7 +130,6 @@ $productImageWidthMedium:100%;
 		}
 	}
 }	
-	
 #liquid1{
 	position:absolute;
 	top:$desktopTopBuffer;
@@ -135,8 +141,7 @@ $productImageWidthMedium:100%;
 	.liquid-child{
 		height:100%;
 	}
-} 
-
+}
 /* Products route */
 .products-index{
 	float:left;
@@ -188,31 +193,40 @@ $productImageWidthMedium:100%;
 .gradient{
 	background: $primaryWhite;
 	background: -moz-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, $primaryGradient), 
-		color-stop(34%, $primaryWhite), color-stop(66%, $primaryWhite), color-stop(100%, $primaryGradient));
+	background: -webkit-gradient(left top, right top, color-stop(0%, $primaryGradient), color-stop(34%, $primaryWhite), color-stop(66%, $primaryWhite), color-stop(100%, $primaryGradient));
 	background: -webkit-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
 	background: -o-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
 	background: -ms-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
 	background: linear-gradient(to right, $primaryGradient 0%, white 34%, $primaryWhite 66%, $primaryGradient 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ececec', GradientType=1 );
 }
-.about-section    {@extend .gradient;}
-.products-section {@extend .gradient;}
-#products-section-1 {}
-#products-section-2 {}
-#products-section-3 {}
+.about-section{@extend .gradient;}
+.products-section{@extend .gradient;}
+#products-section-1{}
+#products-section-2{}
+#products-section-3{}
+#about-section-1{
+	div{
+		transform: translate(50%,50%);
+		width:50%;
+		height:50%;
+		background: url("/assets/qvevri.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
+#about-section-2{}
+#about-section-3{}
 
 /////////////////////////////////
 //handling activated product route in collapsed section
 .kwicks-collapsed
 {	
 	display:table;
-	
 	.liquid-container {
-		
 		display:table-cell;
 		vertical-align: middle;
-
 		.products-index-img{
 			-webkit-transition: all 1.5s ease;
 			-moz-transition: all 1.5s ease;

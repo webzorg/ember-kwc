@@ -27,9 +27,6 @@ module.exports = function(deployTarget) {
       delete: true,
       args:['--verbose', '-ztl']
     }
-    ENV['revision-data'] = {
-      type: 'git-commit'
-    }
     // configure other plugins for production deploy target here
   }
 
