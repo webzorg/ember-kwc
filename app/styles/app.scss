@@ -31,10 +31,10 @@ $navigationFontSize:1.1em;
 $mediumNavigationFontSize:1.2em;
 $smallNavigationFontSize:1em;
 
-$productWrapperWidth:19%;
+$productWrapperWidth:14%;
 $productWrapperWidthMedium:24%;
-$productImageWidth:50%;
-$productImageWidthMedium:100%;
+$productImageWidth:40%;
+$productImageWidthMedium:80%;
 
 @font-face {
     font-family: eng;
@@ -81,13 +81,9 @@ body{
 	left:$desktopLeftBuffer;
 	height:$desktopTopBuffer;
 	width:$desktopContentWidth;
-	display:table;
-	span{
-		text-align: center;
-		font-size:2.5em;
-		display:table-cell;
-		vertical-align: middle;
-	}
+	text-align: center;
+	line-height: 12.5vh;
+	font-size: 10vh;
 }
 #navigationWrapper{
 	font-size:$navigationFontSize;
@@ -136,39 +132,27 @@ body{
 	left:$desktopLeftBuffer;
 	height:$desktopContentHeight;
 	width:$desktopContentWidth;
-	//min-height: 17em;
-	//margin:$desktopTopBuffer/2-0.3 0 0 $desktopLeftBuffer;
 	.liquid-child{
 		height:100%;
 	}
 }
 /* Products route */
-.products-index{
-	float:left;
+.products-index-component{
 	width:$productWrapperWidth;
-	background-color: rgba(0,0,0,0.5);
-
-	-webkit-box-shadow: inset 0px 0px 10px 3px rgba(255,215,0, 0.3);
-	-moz-box-shadow: inset 0px 0px 10px 3px rgba(255,215,0, 0.3);
-	box-shadow: inset 0px 0px 10px 3px rgba(255,215,0, 0.3);
-
-	margin:1% 0.5% 0% 0.5%;
+	border:1px solid red;
+}
+.products-index{
+	border:1px solid blue;
 }
 .products-index-img{
 	display:block;
-	width:$productImageWidth;
-	margin:0 auto;
+	
 }
-
-.products-index-div{
-	line-height: 1em;
-	height:2.2em;
-	vertical-align: middle;
-	text-align: center;
-}
-.products-index-span{
-	font-size:1em;
-	color:$primaryRed;
+.products-index-span-wrapper{
+	width:100px;
+	display:block;
+	border:1px solid orange;
+	.products-index-span{}
 }
 
 .kwicks {
@@ -179,11 +163,7 @@ body{
     }
 }
 .kwicks-selected{
-	-webkit-transition: background 0.5s ease;
-	-moz-transition: background 0.5s ease;
-	-ms-transition: background 0.5s ease;
-	-o-transition: background 0.5s ease;
-	transition: background 0.5s ease;
+	overflow:auto;
 }
 .kwicks.kwicks-processed > * {
 	margin: 0;
@@ -191,21 +171,31 @@ body{
 }
 
 .gradient{
-	background: $primaryWhite;
-	background: -moz-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, $primaryGradient), color-stop(34%, $primaryWhite), color-stop(66%, $primaryWhite), color-stop(100%, $primaryGradient));
-	background: -webkit-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
-	background: -o-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
-	background: -ms-linear-gradient(left, $primaryGradient 0%, $primaryWhite 34%, $primaryWhite 66%, $primaryGradient 100%);
-	background: linear-gradient(to right, $primaryGradient 0%, white 34%, $primaryWhite 66%, $primaryGradient 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ececec', GradientType=1 );
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+23,ffffff+100 */
+background: $primaryWhite; /* Old browsers */
+background: -moz-linear-gradient(left, $primaryGradient 15%,  $primaryWhite 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, $primaryGradient 15%, $primaryWhite 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, $primaryGradient 15%, $primaryWhite 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
-.about-section{@extend .gradient;}
-.products-section{@extend .gradient;}
-#products-section-1{}
-#products-section-2{}
-#products-section-3{}
-#about-section-1{
+.section{
+	width:100%;
+	height:100%;
+	@extend .gradient;
+}
+.sectionHeading{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translateX(-50%);
+}
+.about-section{}
+.products-section{}
+#productsSection1{}
+#productsSection2{}
+#productsSection3{}
+#aboutSection1{
+	/*
 	div{
 		transform: translate(50%,50%);
 		width:50%;
@@ -215,34 +205,26 @@ body{
 		background-size: contain;
 		background-repeat: no-repeat;
 	}
+	//*/
 }
-#about-section-2{}
-#about-section-3{}
+#aboutSection2{}
+#aboutSection3{}
 
 /////////////////////////////////
 //handling activated product route in collapsed section
 .kwicks-collapsed
 {	
-	display:table;
-	.liquid-container {
-		display:table-cell;
-		vertical-align: middle;
-		.products-index-img{
-			-webkit-transition: all 1.5s ease;
-			-moz-transition: all 1.5s ease;
-			-ms-transition: all 1.5s ease;
-			-o-transition: all 1.5s ease;
-			transition: all 1.5s ease;
-			-webkit-transform: translateY(45%);
-			-moz-transform: translateY(45%);
-			-ms-transform: translateY(45%);
-			-o-transform: translateY(45%);
-			transform: translateY(45%);
-		}
-	}
 	//hide bottle name && select_box of collapsed section
 	.products-index-span, .ember-power-select{
 		display:none;
+	}
+	#productIndexWrapper{
+		position:absolute;
+		top:50%;
+		transform: translateY(-50%);
+
+		//.product-index-component > .product-index
+		.products-index{}
 	}
 }
 
@@ -257,76 +239,52 @@ body{
 	}
 }
 ////////////////////////////////////////////////////////////////
-#liquid2_products{
-	//-webkit-transition: all 1s ease;
-	//-moz-transition: all 1s ease;
-	//-ms-transition: all 1s ease;
-	//-o-transition: all 1s ease;
-	//transition: all 1s ease;
+#liquid2_product{
+	position:absolute;
+	width:100%;
 }
 /**************************************************************/
 
-
-/**************************************************************/
-/* Small only */
-
-@media screen and (max-width: 39.9375em) {
+/***********************MEDIA QUERIES**************************/
+@include breakpoint(small down) { 
 	#navigationWrapper{
 		font-size:$smallNavigationFontSize;
 	}
-	$mobileTopBuffer:0%;
-	$mobileContentHeight:100%;
 	#banner{
 		display:none;
 	}
 	#liquid1{
-		top:$mobileTopBuffer !important;
-		height:$mobileContentHeight !important;
+		top:0 !important;
+		height:100% !important;
 	}
 }
-/* Small & Medium */
-@media screen and (max-width: 63.9375em) {
-
-	/* Products route */
-	.products-index{
-		width:$productWrapperWidthMedium;
-	}
-	.products-index-img{
-		width:$productImageWidthMedium;
-	}
-	.products-index-span{
-	}
-
-	#banner{
-		font-size: 0.75em;
-		left:$mobileLeftBuffer;
-		width:$mobileContentWidth;
-		height:$mobileTopBuffer;
-	}
+@include breakpoint(medium down){
 	#liquid1{
 		width:$mobileContentWidth;
 		height:$mobileContentHeight;
 		left:$mobileLeftBuffer;
 		top:$mobileTopBuffer;
-		//margin:$mobileTopBuffer auto 0px $mobileLeftBuffer;
 	}
 	#navigationWrapper{
 		width:$mobileLeftBuffer;
 	}
-}
-/* Medium and up */
-@media screen and (min-width: 40em) {}
-/* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}@include breakpoint(medium){
 	#navigationWrapper{
 		font-size:$mediumNavigationFontSize;
-	}		
+	}
 }
-/* Large and up */
-@media screen and (min-width: 64em) {}
-/* Large only */
-@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
-
+@include breakpoint(large){
+	/* Products route */
+	.products-index{
+		//width:$productWrapperWidth;
+	}
+	.products-index-img{
+		//width:$productImageWidth;
+	}
+	.products-index-span{
+	}
+}
 
 #orientation-warning {
 	position:absolute;

@@ -8,26 +8,8 @@
 as |type|}}
 	{{type}}
 {{/power-select}}
-
-{{#each dynamicallyFilteredProducts as |p|}}
-		{{product-listing product=p}}	
-{{/each}}
-
-<!--
-	<div id="slickWrapper">
-	 
-		{{#slick-slider 
-			slidesToShow=5
-			responsive=breakpoints
-			arrows=false
-			autoplay=true
-			speed=200
-			swipeToSlide=true
-			touchThreshold=10
-			rows=2
-		}}
-			
-		{{/slick-slider}}			
-	</div>
-
--->
+<div id="productIndexWrapper">
+	{{#each dynamicallyFilteredProducts as |p|}}
+		{{product-listing product=p class="products-index-component"}}	
+	{{/each}}
+</div>
