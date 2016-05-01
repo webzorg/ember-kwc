@@ -6,6 +6,33 @@
 //@import 'bower_components/photoswipe/src/css/main';
 //@import 'bower_components/jquery.kwicks/jquery.kwicks.min.css';
 
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+
 $primaryRed:#BE0A1C;
 $primaryBlack:#1A171B;
 $primaryLightGray:#DCDCDC;
@@ -31,10 +58,12 @@ $navigationFontSize:1.1em;
 $mediumNavigationFontSize:1.2em;
 $smallNavigationFontSize:1em;
 
-$productWrapperWidth:14%;
-$productWrapperWidthMedium:24%;
-$productImageWidth:40%;
-$productImageWidthMedium:80%;
+$productWrapperWidth:32%;
+$productImageWidth:25%;
+$productTextWidth:70%;
+$productImageWidthMedium:25%;
+$productWrapperWidthMedium:32%;
+$productTextWidthMedium:70%;
 
 @font-face {
     font-family: eng;
@@ -138,22 +167,32 @@ body{
 }
 /* Products route */
 .products-index-component{
+	display:inline-block;
 	width:$productWrapperWidth;
-	border:1px solid red;
+	.products-index{
+
+		.products-index-img{
+			display:inline-block;
+			width:$productImageWidth;
+			vertical-align: bottom;
+		}
+		.products-index-text-wrapper{
+			display:inline-block;
+			width:$productTextWidth;
+			vertical-align: bottom;
+			.products-index-heading{
+				font-size: 1.5em;
+				border-bottom: 2px solid $primaryDarkGray;
+			}
+			.products-index-description{
+				color:$primaryDarkGray;
+				@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);  
+			}
+		}
+
+	}
 }
-.products-index{
-	border:1px solid blue;
-}
-.products-index-img{
-	display:block;
-	
-}
-.products-index-span-wrapper{
-	width:100px;
-	display:block;
-	border:1px solid orange;
-	.products-index-span{}
-}
+
 
 .kwicks {
     width: 100%;
@@ -215,7 +254,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
 .kwicks-collapsed
 {	
 	//hide bottle name && select_box of collapsed section
-	.products-index-span, .ember-power-select{
+	.products-index-heading, .ember-power-select{
 		display:none;
 	}
 	#productIndexWrapper{
@@ -282,8 +321,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
 	.products-index-img{
 		//width:$productImageWidth;
 	}
-	.products-index-span{
-	}
+	.products-index-heading{}
+	.products-index-description{}
 }
 
 #orientation-warning {
