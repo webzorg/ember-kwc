@@ -58,7 +58,7 @@ $navigationFontSize:1.1em;
 $mediumNavigationFontSize:1.2em;
 $smallNavigationFontSize:1em;
 
-$productWrapperWidth:32%;
+$productWrapperWidth:30%;
 $productImageWidth:25%;
 $productTextWidth:70%;
 $productImageWidthMedium:25%;
@@ -166,11 +166,13 @@ body{
 	}
 }
 /* Products route */
-.products-index-component{
-	display:inline-block;
-	width:$productWrapperWidth;
-	.products-index{
-
+#products-index-component-wrapper{
+	position:absolute;
+	top:0%;
+	left:0%;
+	.products-index-component{
+		display:inline-block;
+		width:$productWrapperWidth;
 		.products-index-img{
 			display:inline-block;
 			width:$productImageWidth;
@@ -189,10 +191,36 @@ body{
 				@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);  
 			}
 		}
-
 	}
 }
+.productModal{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	width:50%;
+	//background-color: #fff;
+	//align:middle;
+	//color:$primaryBlack;
+	#products-modal-image {
+		display:inline-block;
+		width:20%;
+		vertical-align:bottom;
+	}
 
+	#products-modal-text{
+		display:inline-block;
+		width:60%;
+		border:1px solid red;
+		vertical-align: top;
+		#products-modal-heading{
+			font-size: 1.5em;
+			border-bottom: 2px solid $primaryDarkGray;
+		}
+	}
+
+}
 
 .kwicks {
     width: 100%;
@@ -252,36 +280,41 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
 /////////////////////////////////
 //handling activated product route in collapsed section
 .kwicks-collapsed
-{	
+{
 	//hide bottle name && select_box of collapsed section
-	.products-index-heading, .ember-power-select{
-		display:none;
-	}
-	#productIndexWrapper{
-		position:absolute;
+	
+
+	.ember-power-select{
+			display:none;
+		}
+	#products-index-component-wrapper{
+		.products-index-text-wrapper{
+			display:none;
+		}
 		top:50%;
-		transform: translateY(-50%);
-
-		//.product-index-component > .product-index
-		.products-index{}
-	}
+		transform:translateY(-50%);
+		-webkit-transition: all 1.5s ease-out;
+		-moz-transition: all 1.5s ease-out;
+		-ms-transition: all 1.5s ease-out;
+		-o-transition: all 1.5s ease-out;
+		transition: top 1.5s ease-out;
+		.products-index-component{
+			width:23%;
+			//.product-index-component > .product-index
+			.products-index-img{
+				width:100%;
+			}
+		}
+	}		
+	
 }
 
-.productModal{
-	width:50%;
-	background-color: #fff;
-	align:middle;
-	color:$primaryBlack;
-	img {
-		width:20%;
-		float:left;
-	}
-}
+
 ////////////////////////////////////////////////////////////////
-#liquid2_product{
+/*#liquid2_product{
 	position:absolute;
 	width:100%;
-}
+}*/
 /**************************************************************/
 
 /***********************MEDIA QUERIES**************************/

@@ -8,8 +8,10 @@
 as |type|}}
 	{{type}}
 {{/power-select}}
-<div id="productIndexWrapper">
+
+<div id="products-index-component-wrapper">
 	{{#each dynamicallyFilteredProducts as |p|}}
-		{{product-listing product=p class="products-index-component"}}	
-	{{/each}}
-</div>
+		{{product-listing product=p componentProperty=outerProperty class="products-index-component"}}
+	{{/each}}		
+</div>	
+

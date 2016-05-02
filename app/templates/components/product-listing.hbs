@@ -1,19 +1,21 @@
-<div class="products-index" {{action "toggleModal"}}>
-	<img src="{{product.thumb}}" alt="" class="products-index-img">
-	<div class="products-index-text-wrapper">
-		<div class="products-index-heading">{{product.name}}</div>
-    <div class="products-index-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
-	</div>
+
+<img src="{{product.thumb}}" alt="" class="products-index-img" {{action "toggleModal"}}>
+<div class="products-index-text-wrapper" {{action "toggleModal"}}>
+	<div class="products-index-heading">{{product.name}}</div>
+	<div class="products-index-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
 </div>
+
 
 {{#if isShowingModal}}
   {{#modal-dialog close="toggleModal"
-                  translucentOverlay=false
-                  container-class="productModal"
-                  
-                  clickOutsideToClose=true
-                  }}
-    <img src="{{product.thumb}}" alt="">
-    {{product.description}}
+  	translucentOverlay=false
+  	container-class="productModal"
+  	clickOutsideToClose=true
+  }}
+    <img id="products-modal-image" src="{{product.thumb}}" alt="{{product.name}}">
+    <div id="products-modal-text">
+		<div id="products-modal-heading">{{product.name}}</div>
+    	{{product.description}}
+    </div>
   {{/modal-dialog}}
 {{/if}}
