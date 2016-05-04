@@ -11,7 +11,8 @@
     "loader.js": "^3.5.0",
     "pretender": "~0.10.1",
     "Faker": "~3.0.0",
-    "slick-carousel": "^1.5.9",
-    "jquery.kwicks": "^2.2.1"
+    "jquery.kwicks": "^2.2.1",
+    "lodash": "^4.11.2",
+    "Swiper": "swiper#^3.3.1"
   }
 }

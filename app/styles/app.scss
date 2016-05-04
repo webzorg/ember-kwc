@@ -5,7 +5,7 @@
 @include foundation-everything;
 //@import 'bower_components/photoswipe/src/css/main';
 //@import 'bower_components/jquery.kwicks/jquery.kwicks.min.css';
-
+//@import "bower_components/Swiper/dist/css/swiper.min.css";
 /* mixin for multiline */
 @mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
   overflow: hidden;
@@ -71,6 +71,14 @@ $productTextWidthMedium:70%;
 }
 body{
 	font-family: eng;
+}
+#copyright{
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	width:115px;
+	height:20px;
+	margin:0.25%;
 }
 #loader{
 	position:absolute;
@@ -165,10 +173,20 @@ body{
 		height:100%;
 	}
 }
+/* Index Route */
+.swiper-container {
+    width: 600px;
+    height: 300px;
+}    
+/*.swiper-slide{	
+	height:100%;
+	text-align: center;
+	background-color:#ccc;
+}
 /* Products route */
 #products-index-component-wrapper{
 	position:absolute;
-	top:0%;
+	top:5%;
 	left:0%;
 	.products-index-component{
 		display:inline-block;
@@ -183,7 +201,8 @@ body{
 			width:$productTextWidth;
 			vertical-align: bottom;
 			.products-index-heading{
-				font-size: 1.5em;
+				white-space: nowrap;
+				font-size: 1.4em;
 				border-bottom: 2px solid $primaryDarkGray;
 			}
 			.products-index-description{
@@ -194,11 +213,6 @@ body{
 	}
 }
 .productModal{
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
 	width:50%;
 	//background-color: #fff;
 	//align:middle;
@@ -208,7 +222,6 @@ body{
 		width:20%;
 		vertical-align:bottom;
 	}
-
 	#products-modal-text{
 		display:inline-block;
 		width:60%;
@@ -219,7 +232,6 @@ body{
 			border-bottom: 2px solid $primaryDarkGray;
 		}
 	}
-
 }
 
 .kwicks {
@@ -231,19 +243,13 @@ body{
 }
 .kwicks-selected{
 	overflow:auto;
+	.sectionHeading{
+		display:none;
+	}
 }
 .kwicks.kwicks-processed > * {
 	margin: 0;
 	position: absolute;
-}
-
-.gradient{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+23,ffffff+100 */
-background: $primaryWhite; /* Old browsers */
-background: -moz-linear-gradient(left, $primaryGradient 15%,  $primaryWhite 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, $primaryGradient 15%, $primaryWhite 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, $primaryGradient 15%, $primaryWhite 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 .section{
 	width:100%;
@@ -282,25 +288,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
 .kwicks-collapsed
 {
 	//hide bottle name && select_box of collapsed section
-	
-
 	.ember-power-select{
-			display:none;
-		}
+		display:none;
+	}
 	#products-index-component-wrapper{
 		.products-index-text-wrapper{
 			display:none;
 		}
 		top:50%;
 		transform:translateY(-50%);
-		-webkit-transition: all 1.5s ease-out;
-		-moz-transition: all 1.5s ease-out;
-		-ms-transition: all 1.5s ease-out;
-		-o-transition: all 1.5s ease-out;
-		transition: top 1.5s ease-out;
+		@extend .transition;
 		.products-index-component{
-			width:23%;
-			//.product-index-component > .product-index
+			width:22%;
 			.products-index-img{
 				width:100%;
 			}
@@ -341,7 +340,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
 		width:$mobileLeftBuffer;
 	}
 
-}@include breakpoint(medium){
+}
+@include breakpoint(medium){
 	#navigationWrapper{
 		font-size:$mediumNavigationFontSize;
 	}
@@ -378,6 +378,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
     #orientation-warning {
     	display: table;
 	}
+}
+
+
+.gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+23,ffffff+100 */
+	background: $primaryWhite; /* Old browsers */
+	background: -moz-linear-gradient(left, $primaryGradient 15%,  $primaryWhite 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, $primaryGradient 15%, $primaryWhite 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, $primaryGradient 15%, $primaryWhite 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+.transition{
+	-webkit-transition: all 1.5s ease-out;
+	-moz-transition: all 1.5s ease-out;
+	-ms-transition: all 1.5s ease-out;
+	-o-transition: all 1.5s ease-out;
+	transition: all 1.5s ease-out;
 }
 
 //ember-power-select options
