@@ -11,8 +11,7 @@ export default Ember.Route.extend({
     			//pagination: '.swiper-pagination',
     			grabCursor:true,
     			effect: 'fade',
-				fade: {crossFade: false},
-				lazyLoading:true
+				fade: {crossFade: false}
 				//cube: {slideShadows: true, shadow: true, shadowOffset: 20, shadowScale: 0.94},
 				//coverflow: {rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows : true},
 				//flip: {slideShadows : true, limitRotation: true}
