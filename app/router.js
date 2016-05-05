@@ -6,7 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.route('about');
+    this.route('about', function() {
+      this.route('about-1');
+      this.route('about-2');
+      this.route('about-3');
+    });
     this.route('products', function(){
       this.route('product-1');
       this.route('product-2');

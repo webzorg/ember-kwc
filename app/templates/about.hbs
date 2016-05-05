@@ -1,16 +1,20 @@
 <div class='kwicks kwicks-horizontal'>
-	<div class="section about-section">
-		<div id="aboutSection1">asd</div>
-		<span class="sectionHeading">satauri1</span>
+	<div class="section about-section" {{action 'switchAboutSection' 'aboutSection1' 'about.about-1'}}>
+		<div id="aboutSection1"></div>
+		<span class="sectionHeading">About 1</span>
 	</div>
-    <div class="section about-section">
+    <div class="section about-section" {{action 'switchAboutSection' 'aboutSection2' 'about.about-2'}}>
     	<div id="aboutSection2"></div>
-    	<span class="sectionHeading">satauri2</span>
+    	<span class="sectionHeading">About 2</span>
     </div>
-	<div class="section about-section">
+	<div class="section about-section" {{action 'switchAboutSection' 'aboutSection3' 'about.about-3'}}>
 		<div id="aboutSection3"></div>
-		<span class="sectionHeading">satauri3</span>
+		<span class="sectionHeading">About 3</span>
 	</div>
 </div>
 
-{{outlet}}
+{{#if isWormholeEnabled}}
+	{{#ember-wormhole to=aboutDestination}}
+		{{outlet}}
+	{{/ember-wormhole}}
+{{/if}}

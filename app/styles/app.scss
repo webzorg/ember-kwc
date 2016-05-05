@@ -100,7 +100,7 @@ body{
 	transform: translate(-50%,-50%);
 }
 #logoWrapper{
-    background-image: url("/assets/logoBW.png");
+    background-image: url("/assets/images/logoBW.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -134,7 +134,7 @@ body{
 	/* nav menu */
 	ul {
 		:not(:first-child) {	
-   			background-image: url("/assets/nav_item_decor.png");
+   			background-image: url("/assets/images/nav_item_decor.png");
 			background-repeat: no-repeat;
 			background-position: 50% 10%;
 			background-size: 15%;
@@ -175,14 +175,17 @@ body{
 }
 /* Index Route */
 .swiper-container {
-    width: 600px;
-    height: 300px;
+   	height:100%;
+    border:1px solid red; 
+    .swiper-wrapper{
+    	.swiper-slide{
+    		img{
+    			width: 100%;
+				height: 100%;
+				object-fit: cover;   		}
+    	}
+    }
 }    
-/*.swiper-slide{	
-	height:100%;
-	text-align: center;
-	background-color:#ccc;
-}
 /* Products route */
 #products-index-component-wrapper{
 	position:absolute;
