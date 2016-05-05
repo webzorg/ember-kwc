@@ -114,13 +114,11 @@ body{
 	height:100%;
 } 
 #banner{
-	position:absolute;
-	left:$desktopLeftBuffer;
-	height:$desktopTopBuffer;
-	width:$desktopContentWidth;
-	text-align: center;
-	line-height: 12.5vh;
-	font-size: 10vh;
+	display:inline-block;
+	position:relative;
+	left:16%;
+	bottom:-4%;
+	font-size: 5vh;
 }
 #navigationWrapper{
 	font-size:$navigationFontSize;
@@ -203,6 +201,7 @@ body{
 			width:$productTextWidth;
 			vertical-align: bottom;
 			.products-index-heading{
+				text-transform: uppercase;
 				white-space: nowrap;
 				font-size: 1.4em;
 				border-bottom: 2px solid $primaryDarkGray;

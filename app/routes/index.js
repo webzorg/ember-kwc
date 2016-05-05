@@ -12,6 +12,7 @@ export default Ember.Route.extend({
     			grabCursor:true,
     			effect: 'fade',
 				fade: {crossFade: false},
+				lazyLoading:true
 				//cube: {slideShadows: true, shadow: true, shadowOffset: 20, shadowScale: 0.94},
 				//coverflow: {rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows : true},
 				//flip: {slideShadows : true, limitRotation: true}
