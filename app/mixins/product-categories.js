@@ -1,8 +1,32 @@
 import Ember from 'ember';
 
+/*"use strict";
+var _Ember = Ember;
+var Mixin = _Ember.Mixin;
+var computed = _Ember.computed;
+var uniq = _Ember.computed.uniq; 
+//equivalent to the line below*/
 const { Mixin, computed, computed: { uniq } } = Ember;
 
+
 export default Mixin.create({
+	actions: {
+		toggleProductsOptions(){
+				
+			this.toggleProperty('optionsMenuShowing');
+			if(this.get('optionsMenuShowing'))
+			{
+				Ember.$("#productsOptionsContainer").addClass('productsOptionsContainerBackground');
+			}else{
+				Ember.$("#productsOptionsContainer").removeClass('productsOptionsContainerBackground');
+			}
+		},
+		selectProductType(selectedTypeTemp) {
+	      	this.set('selectedType', selectedTypeTemp);
+	      	this.set('productFilterValue2', selectedTypeTemp);
+	    }
+	},
+	selectedType: null,
 	productFilterKey: 'ptype', 
 	productFilterValue: null,
 	productFilterKey2: 'ptype2',
