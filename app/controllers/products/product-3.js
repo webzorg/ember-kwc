@@ -3,7 +3,6 @@ import productCategoriesMixin from 'kwc/mixins/product-categories';
 
 export default Ember.Controller.extend(productCategoriesMixin, {
 	productFilterValue: 'productsSpirit',
-
 	selectedType: null,
 	actions: {
 	    selectProductType(selectedTypeTemp) {

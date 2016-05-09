@@ -1,8 +1,9 @@
 export default function(){
-	let transition_lvl_1_1 = 'toRight';
-  let transition_lvl_1_2 = 'toLeft';
+	let transition_lvl_1_1 = 'fade';
+  let transition_lvl_1_2 = 'fade';
   //let transition_lvl_2 = 'crossFade';
-  //let duration = 600;
+  let optionsToggle = 'fade';
+  let duration = 400;
   /*
   toLeft, toRight, toUp, toDown
     fade
@@ -13,6 +14,18 @@ export default function(){
     scale
     wait this.use('wait', 1000, { then: 'fade' })
 */
+  this.transition(
+    this.hasClass('productsLiquidOptionsHandle'),
+    this.toValue(true),
+    this.use(optionsToggle, {wait: duration}),
+    this.reverse(optionsToggle, {wait: duration})
+  );
+  this.transition(
+    this.hasClass('productsLiquidOptions'),
+    this.toValue(true),
+    this.use('toLeft', {wait: duration}),
+    this.reverse('toRight', {wait: duration})
+  );
 
   //loading transition
   this.transition(

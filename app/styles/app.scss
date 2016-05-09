@@ -179,11 +179,47 @@ body{
     		img{
     			width: 100%;
 				height: 100%;
-				object-fit: cover;   		}
+				object-fit: cover;   		
+			}
     	}
     }
 }    
 /* Products route */
+#productsOptionsContainer
+{
+	z-index: 1000;
+	position:absolute;
+	right:0;
+	top:0;
+	@extend .transition;
+	#productsLiquidOptionsHandle{
+		float:right;
+		width:50px;
+		height:50px;
+		#productsOptionsActive{
+			height:50px;
+			background-image: url("/assets/images/grapesToggle.png");
+			background-size: 85%;
+			background-position: center;
+		}
+		#productsOptionsInactive{
+			height:50px;
+			background-image: url("/assets/images/grapes.png");
+			background-size: 100%;
+			background-position: center;
+		}
+	}
+	.productsLiquidOptions{
+		float:left;
+		padding:9px 0px;
+		margin:0px 9px;
+		width:150px;
+	}
+}
+.productsOptionsContainerBackground{
+	background-color:$primaryLightGray;
+}
+
 #products-index-component-wrapper{
 	position:absolute;
 	top:5%;
@@ -289,7 +325,7 @@ body{
 .kwicks-collapsed
 {
 	//hide bottle name && select_box of collapsed section
-	.ember-power-select{
+	#productsOptionsContainer{
 		display:none;
 	}
 	#products-index-component-wrapper{
@@ -306,7 +342,6 @@ body{
 			}
 		}
 	}		
-	
 }
 
 
@@ -400,28 +435,33 @@ body{
 
 //ember-power-select options
 //Backgrounds
-$ember-power-select-background-color: $primaryDarkGray !default;
-$ember-power-select-highlighted-background: $primaryRed !default;
-$ember-power-select-selected-background: $primaryDarkGray !default;
+$ember-power-select-background-color: $primaryLightGray !default;
+$ember-power-select-highlighted-background: $primaryDarkGray !default;
+$ember-power-select-selected-background: $primaryLightGray !default;
 
 //Texts
-$ember-power-select-text-color: $primaryRed !default;
-$ember-power-select-placeholder-color: $primaryRed !default;
-$ember-power-select-highlighted-color: $primaryRed !default;
+$ember-power-select-text-color: $primaryBlack !default;
+$ember-power-select-placeholder-color: $primaryBlack !default;
+$ember-power-select-highlighted-color: $primaryBlack !default;
 
 //Borders
-$ember-power-select-border-color: $primaryRed !default;
+$ember-power-select-border-color: $primaryDarkGray !default;
 $ember-power-select-focus-border-color: $ember-power-select-border-color !default;
-$ember-power-select-default-border: 2px solid $ember-power-select-border-color !default;
-$ember-power-select-default-focus-border: 2px solid $ember-power-select-focus-border-color !default;
+$ember-power-select-default-border: 1px solid $ember-power-select-border-color !default;
+$ember-power-select-default-focus-border: 1px solid $ember-power-select-focus-border-color !default;
 
 //Borders radius
 $ember-power-select-default-border-radius: 0px !default; // General border radius
 
 //Other
-$ember-power-select-line-height: 2em !default;
+$ember-power-select-line-height: 30px !default;
 $ember-power-select-trigger-icon-color: $ember-power-select-border-color !default;
-$ember-power-select-clear-btn-margin: 25px !default;
+$ember-power-select-clear-btn-margin: 20px;
+.ember-power-select-clear-btn {
+	transform: translateY(-45%);
+	font-size: 1.5em;
+	font-weight: bold;
+}
 $ember-power-select-number-of-visible-options: 7 !default;
 $ember-power-select-trigger-ltr-padding: 0 16px 0 8px !default;
 $ember-power-select-trigger-rtl-padding: 0 8px 0 16px !default;

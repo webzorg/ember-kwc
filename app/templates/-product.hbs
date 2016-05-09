@@ -1,13 +1,27 @@
-{{#power-select 
-	selected=selectedType
-	placeholder="Viewing all"
-	searchEnabled=false
-	allowClear=true
-	options=uniqueMappedProducts
-	onchange=(action "selectProductType") 	
-as |type|}}
-	{{type}}
-{{/power-select}}
+<div id="productsOptionsContainer">
+	<div id="productsLiquidOptionsHandle" {{action "toggleProductsOptions"}}>
+		{{#liquid-if optionsMenuShowing class="productsLiquidOptionsHandle"}}
+			<div id="productsOptionsActive"></div>
+		{{else}}
+			<div id="productsOptionsInactive"></div>
+		{{/liquid-if}}
+	</div>
+	{{#liquid-if optionsMenuShowing class="productsLiquidOptions"}}
+		{{#power-select 
+			selected=selectedType
+			placeholder="Viewing all..."
+			searchEnabled=false
+			allowClear=true
+			options=uniqueMappedProducts
+			onchange=(action "selectProductType") 	
+		as |type|}}
+			{{type}}
+		{{/power-select}}
+	{{else}}
+		
+	{{/liquid-if}}
+</div>
+
 
 <div id="products-index-component-wrapper">
 	{{#each dynamicallyFilteredProducts as |p|}}
