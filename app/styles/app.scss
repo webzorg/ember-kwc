@@ -475,11 +475,11 @@ $ember-power-select-default-focus-border: 1px solid $ember-power-select-focus-bo
 $ember-power-select-default-border-radius: 0px !default; // General border radius
 
 //Other
-$ember-power-select-line-height: 30px !default;
+$ember-power-select-line-height:30px !default;
 $ember-power-select-trigger-icon-color: $ember-power-select-border-color !default;
 $ember-power-select-clear-btn-margin: 20px;
 .ember-power-select-clear-btn {
-	transform: translateY(-45%);
+	font-family: serif;
 	font-size: 1.5em;
 	font-weight: bold;
 }
