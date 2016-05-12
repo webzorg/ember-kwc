@@ -7,19 +7,19 @@ export default function() {
           type: 'about-section-data',
           id: 1,
           attributes:{
-            aboutsectionheading: 'About 1 from mirage'
+            aboutsectionheading: 'About 1'
           }
         }, {
           type: 'about-section-data',
           id: 2,
           attributes:{
-            aboutsectionheading: 'About 2 from mirage'
+            aboutsectionheading: 'About 2'
           }
         }, {
           type: 'about-section-data',
           id: 3,
           attributes:{
-            aboutsectionheading: 'About 3 from mirage'
+            aboutsectionheading: 'About 3'
           }
         }
       ]
@@ -33,19 +33,19 @@ export default function() {
           type: 'products-section-data',
           id: 1,
           attributes:{
-            productsectionheading: 'Bottled from mirage',
+            productsectionheading: 'Bottled',
           }
         }, {
           type: 'products-section-data',
           id: 2,
           attributes:{
-            productsectionheading: 'Qvevri from mirage',
+            productsectionheading: 'Qvevri',
           }
         }, {
           type: 'products-section-data',
           id: 3,
           attributes:{
-            productsectionheading: 'Spirits from mirage',
+            productsectionheading: 'Spirits',
           }
         }
       ]

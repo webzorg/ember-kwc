@@ -1,8 +1,7 @@
 
 {{#each model as |aboutSectionData|}}
 	<div {{action 'switchAboutSection' (concat "aboutSection" aboutSectionData.id) (concat "about.about-" aboutSectionData.id)}} class="section about-section">
-		<div id="aboutSection{{aboutSectionData.id}}">
-		</div>
+		<div id="aboutSection{{aboutSectionData.id}}"></div>
 		<span class="sectionHeading">{{aboutSectionData.aboutsectionheading}}</span>
 	</div>
 {{/each}}

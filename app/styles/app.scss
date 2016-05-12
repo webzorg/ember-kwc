@@ -37,6 +37,7 @@ $primaryRed:rgba(190, 10, 28, 1); //BE0A1C
 $primaryRedOpaque:rgba(190, 10, 28, 0.5);
 $primaryBlack:rgba(26, 23, 27, 1); //1A171B
 $primaryLightGray:rgba(220, 220, 220, 1); //DCDCDC
+$primaryDarkerGray:rgba(55, 55, 55, 1);
 $primaryDarkGray:rgba(135, 135, 135, 1); //878787
 $primaryGradient:rgba(237, 237, 237, 1);//EDEDED
 $primaryWhite:rgba(255, 255, 255, 1); //FFFFFF
@@ -71,7 +72,15 @@ $productTextWidthMedium:70%;
     src: url(/assets/eng_font.ttf);
 }
 body{
+	color:$primaryBlack;
 	font-family: eng;
+	a{
+		color:$primaryBlack;
+		outline:none;
+		&:hover{
+			color:$primaryBlack;
+		}
+	}
 }
 #copyright{
 	position:fixed;
@@ -151,14 +160,16 @@ body{
 			width:100%;	
 			display:table;
 			a{
-				color:$primaryBlack;
 				display:table-cell;
 				vertical-align: middle;
 				text-align: center;
 			}
 			a.active{							
 				color:$primaryRed;
-			}			
+			}
+			a:hover{
+				text-decoration:underline;
+			}		
 		}
 	}
 }	
@@ -187,19 +198,41 @@ body{
 } 
 /* About Route*/
 .about-section{
-	h1{
-		text-align:center;
+	padding:1em;
+	text-align: justify;
+	span{
+		white-space: nowrap;
+		display:block;
+
+		margin:0 auto;
+		font-size:2.5em;
 	}
 	img{
-		width:50%;
 		float:left;
-		margin:10px 20px;
+		width:50%;
+		margin:0% 2% 0% 0%;
 	}
 	.about-text{
-		font-size: 1.5em;
-		float:left;
+		display:inline;
+		font-size: 1.2em;
 	}
 }
+#aboutSection1{
+	/*
+	div{
+		transform: translate(50%,50%);
+		width:50%;
+		height:50%;
+		background: url("/assets/qvevri.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	//*/
+}
+#aboutSection2{}
+#aboutSection3{}
+
 /* Products Route */
 #productsOptionsContainer
 {
@@ -207,7 +240,7 @@ body{
 	position:absolute;
 	right:0;
 	top:0;
-	@extend .transition;
+	@extend .slowTransition;
 	#productsLiquidOptionsHandle{
 		float:right;
 		width:50px;
@@ -245,7 +278,7 @@ body{
   0% {
     box-shadow: 0 0 0 0 $primaryRed inset;
   }
-  30% {
+  70% {
       box-shadow: 0 0 0 6px $primaryRedOpaque inset;
   }
   100% {
@@ -275,11 +308,12 @@ body{
 			.products-index-heading{
 				text-transform: uppercase;
 				white-space: nowrap;
-				font-size: 1.4em;
+				font-size: 1.2vw;
 				border-bottom: 2px solid $primaryDarkGray;
 			}
 			.products-index-description{
 				color:$primaryDarkGray;
+				font-size: 1vw;
 				@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);  
 			}
 		}
@@ -329,31 +363,19 @@ body{
 	@extend .gradient;
 }
 .sectionHeading{
+	font-size: 2.5em;
+	white-space: nowrap;
 	position:absolute;
 	left:50%;
 	top:50%;
-	transform: translateX(-50%);
+	transform: translate(-50%,-50%) rotate(-90deg);
 }
-.about-section{}
+
 .products-section{}
 #productsSection1{}
 #productsSection2{}
 #productsSection3{}
-#aboutSection1{
-	/*
-	div{
-		transform: translate(50%,50%);
-		width:50%;
-		height:50%;
-		background: url("/assets/qvevri.png");
-		background-position: center;
-		background-size: contain;
-		background-repeat: no-repeat;
-	}
-	//*/
-}
-#aboutSection2{}
-#aboutSection3{}
+
 
 /////////////////////////////////
 //handling activated product route in collapsed section
@@ -369,34 +391,39 @@ body{
 		}
 		top:50%;
 		transform:translateY(-50%);
-		@extend .transition;
+		@extend .slowTransition;
 		.products-index-component{
-			width:22%;
+			width:17%;
 			.products-index-img{
 				width:100%;
 			}
 		}
-	}		
-}
-
-
-//junk
-.kiwcks-collapsed.about-section{
-		h1{
-			display:none;
-		}
-		img{
+	}
+	img{
+		display:none;
+	}
+	div{		
+		overflow:hidden;
+		span{
+			display:block;
+			position:absolute;
+			top:50%;
+			left:50%;
+			white-space:nowrap;
+			transform-origin:left;
+			-ms-transform: rotate(-90deg); /* IE 9 */
+		    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+		    transform: translate(0%,50%) rotate(-90deg);
+		    @extend .transition;
 		}
 		.about-text{
-			color:red;
+			display:none;
 		}
 	}
+}
 
 ////////////////////////////////////////////////////////////////
-/*#liquid2_product{
-	position:absolute;
-	width:100%;
-}*/
+
 /**************************************************************/
 
 /***********************MEDIA QUERIES**************************/
@@ -473,6 +500,13 @@ body{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 .transition{
+	-webkit-transition: all 0.8s ease-out;
+	-moz-transition: all 0.8s ease-out;
+	-ms-transition: all 0.8s ease-out;
+	-o-transition: all 0.8s ease-out;
+	transition: all 0.8s ease-out;
+}
+.slowTransition{
 	-webkit-transition: all 1.5s ease-out;
 	-moz-transition: all 1.5s ease-out;
 	-ms-transition: all 1.5s ease-out;
