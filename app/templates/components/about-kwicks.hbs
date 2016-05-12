@@ -1,14 +1,10 @@
-<div class="section about-section" {{action 'switchAboutSection' 'aboutSection1' 'about.about-1'}}>
-	<div id="aboutSection1"></div>
-	<span class="sectionHeading">About 1</span>
-</div>
-<div class="section about-section" {{action 'switchAboutSection' 'aboutSection2' 'about.about-2'}}>
-	<div id="aboutSection2"></div>
-	<span class="sectionHeading">About 2</span>
-</div>
-<div class="section about-section" {{action 'switchAboutSection' 'aboutSection3' 'about.about-3'}}>
-	<div id="aboutSection3"></div>
-	<span class="sectionHeading">About 3</span>
-</div>
+
+{{#each model as |heading index|}}
+	<div {{action 'switchAboutSection' (concat "aboutSection" heading.id) (concat "about.about-" heading.id)}} class="section about-section">
+		<div id="aboutSection{{heading.id}}">
+		</div>
+		<span class="sectionHeading">{{heading.aboutsectionheading}}</span>
+	</div>
+{{/each}}
 
 {{yield}}

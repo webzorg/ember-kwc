@@ -14,8 +14,7 @@ export default Mixin.create({
 		toggleProductsOptions(){
 				
 			this.toggleProperty('optionsMenuShowing');
-			if(this.get('optionsMenuShowing'))
-			{
+			if(this.get('optionsMenuShowing')){
 				Ember.$("#productsOptionsContainer").addClass('productsOptionsContainerBackground');
 			}else{
 				Ember.$("#productsOptionsContainer").removeClass('productsOptionsContainerBackground');
@@ -32,13 +31,13 @@ export default Mixin.create({
 	productFilterKey2: 'ptype2',
 	productFilterValue2: null, 
 	productsMapKey: 'ptype2',
-	filteredProducts: computed('model', 'productFilterKey', 'productFilterValue', function() {
-	let {
-		model,
-		productFilterKey,
-		productFilterValue
-	} = this.getProperties('model', 'productFilterKey', 'productFilterValue');
-		return model.filterBy(productFilterKey, productFilterValue);
+	
+	filteredProducts: computed('model.products.[]', 'productFilterKey', 'productFilterValue', function() {
+	  let model = this.get('model.products');
+	  let productFilterKey = this.get('productFilterKey');
+	  let productFilterValue = this.get('productFilterValue');
+
+	  return model.filterBy(productFilterKey, productFilterValue);
 	}),
 
 	mappedProducts: computed('filteredProducts', 'productsMapKey', function() {

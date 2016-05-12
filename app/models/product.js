@@ -1,11 +1,12 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-  name: DS.attr(),
-  ptype: DS.attr(),
-  ptype2: DS.attr(),
-  sdescription: DS.attr(),
-  description: DS.attr(),
-  thumb: DS.attr(),
-  image: DS.attr()
+export default Model.extend({
+  name: attr(),
+  ptype: attr(),
+  ptype2: attr(),
+  sdescription: attr(),
+  description: attr(),
+  thumb: attr(),
+  image: attr()
 });

@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function() {
-		return this.store.findAll('product');
+		return Ember.RSVP.hash({
+			products: this.store.findAll('product'),
+			productsSectionData: this.store.findAll('products-section-datum')
+		}); 
     },
     actions: {
 	    willTransition(transition){
