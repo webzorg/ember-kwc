@@ -6,6 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+    //this.route('about',  {path: '/about/:id'});
     this.route('about', function() {
       this.route('about-1');
       this.route('about-2');

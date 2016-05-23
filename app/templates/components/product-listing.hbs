@@ -5,6 +5,11 @@
 	<div class="products-index-description">{{product.sdescription}}</div>
 </div>
 
+{{#liquid-if isShowingModal class="productExpanded"}}
+  
+{{else}}
+  
+{{/liquid-if}}
 
 {{#if isShowingModal}}
   {{#modal-dialog close="toggleModal"

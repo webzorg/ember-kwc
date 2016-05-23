@@ -198,21 +198,23 @@ body{
 } 
 /* About Route*/
 .about-section{
-	padding:1em;
+	padding:4em 1em;
 	text-align: justify;
-	span{
+	.aboutHeading{
+		position:absolute;
+		top:1%;
+		left:2%;
 		white-space: nowrap;
 		display:block;
-
-		margin:0 auto;
 		font-size:2.5em;
-	}
-	img{
-		float:left;
-		width:50%;
-		margin:0% 2% 0% 0%;
+		@extend .transition;
 	}
 	.about-text{
+		img{
+			float:left;
+			width:50%;
+			margin:0% 2% 0% 0%;
+		}
 		display:inline;
 		font-size: 1.2em;
 	}
@@ -308,7 +310,7 @@ body{
 			.products-index-heading{
 				text-transform: uppercase;
 				white-space: nowrap;
-				font-size: 1.2vw;
+				font-size: 1.3vw;
 				border-bottom: 2px solid $primaryDarkGray;
 			}
 			.products-index-description{
@@ -363,11 +365,15 @@ body{
 	@extend .gradient;
 }
 .sectionHeading{
+	margin:0px;
+	padding:0px;
 	font-size: 2.5em;
 	white-space: nowrap;
 	position:absolute;
 	left:50%;
 	top:50%;
+	-ms-transform: translate(-50%,-50%) rotate(-90deg); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%) rotate(-90deg); /* Chrome, Safari, Opera */
 	transform: translate(-50%,-50%) rotate(-90deg);
 }
 
@@ -375,7 +381,6 @@ body{
 #productsSection1{}
 #productsSection2{}
 #productsSection3{}
-
 
 /////////////////////////////////
 //handling activated product route in collapsed section
@@ -393,26 +398,20 @@ body{
 		transform:translateY(-50%);
 		@extend .slowTransition;
 		.products-index-component{
-			width:17%;
+			width:21%;
 			.products-index-img{
 				width:100%;
 			}
 		}
 	}
-	img{
-		display:none;
-	}
-	div{		
-		overflow:hidden;
-		span{
-			display:block;
-			position:absolute;
-			top:50%;
+	div{//aboutSection1,2,3	
+
+		.aboutHeading{
+			top:50%;//alternative 47.6  translate 0,83
 			left:50%;
-			white-space:nowrap;
 			transform-origin:left;
-			-ms-transform: rotate(-90deg); /* IE 9 */
-		    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+			-ms-transform: translate(0%,50%) rotate(-90deg); /* IE 9 */
+		    -webkit-transform: translate(0%,50%) rotate(-90deg); /* Chrome, Safari, Opera */
 		    transform: translate(0%,50%) rotate(-90deg);
 		    @extend .transition;
 		}
