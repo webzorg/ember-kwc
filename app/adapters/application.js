@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default JSONAPIAdapter.extend({
 	//namespace: 'bla'
-	//host: 'http://localhost:3000',
+	host: 'http://api.socialatlas.net',
 	pathForType: function(type) {
     	return Ember.String.pluralize(Ember.String.underscore(type));
   	}
