@@ -7,12 +7,16 @@ module.exports = function(defaults) {
     // Add options here
     'ember-cli-foundation-6-sass': {
       'foundationJs': 'all'
+    },
+    fingerprint: {
+      //generateAssetMap: true,
+      exclude: ['images/products/']
     }
   });
   app.import('bower_components/Swiper/dist/js/swiper.jquery.min.js');
   app.import('bower_components/Swiper/dist/css/swiper.min.css');
   app.import('bower_components/jquery.kwicks/jquery.kwicks.min.js');
-  app.import('bower_components/ihover/src/ihover.css');//minimize it...
+  //app.import('bower_components/ihover/src/ihover.css');//minimize it...
   //app.import('bower_components/photoswipe/dist/photoswipe-ui-default.min.js');
   
   // Use `app.import` to add additional libraries to the generated
