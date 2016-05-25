@@ -1,5 +1,5 @@
 
-<img src="{{product.thumb}}" alt="" class="products-index-img" {{action "toggleModal"}}>
+<img src="/assets/images/products/thumb/{{product.image}}.png" alt="" class="products-index-img" {{action "toggleModal"}}>
 <div class="products-index-text-wrapper" {{action "toggleModal"}}>
 	<div class="products-index-heading">{{product.name}}</div>
 	<div class="products-index-description">{{product.sdescription}}</div>
@@ -17,7 +17,7 @@
   	container-class="productModal"
   	clickOutsideToClose=true
   }}
-    <img id="products-modal-image" src="{{product.image}}" alt="{{product.name}}">
+    <img id="products-modal-image" src="/assets/images/products/{{product.image}}.png" alt="{{product.name}}">
     <div id="products-modal-text">
 		<div id="products-modal-heading">{{product.name}}</div>
     	{{product.description}}

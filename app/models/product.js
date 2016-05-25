@@ -7,6 +7,5 @@ export default Model.extend({
   ptype2: attr(),
   sdescription: attr(),
   description: attr(),
-  thumb: attr(),
   image: attr()
 });
