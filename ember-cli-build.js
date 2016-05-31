@@ -13,6 +13,7 @@ module.exports = function(defaults) {
       exclude: ['images/products/']
     }
   });
+  app.import('bower_components/imagesloaded/imagesloaded.pkgd.min.js');
   app.import('bower_components/Swiper/dist/js/swiper.jquery.min.js');
   app.import('bower_components/Swiper/dist/css/swiper.min.css');
   app.import('bower_components/jquery.kwicks/jquery.kwicks.min.js');
