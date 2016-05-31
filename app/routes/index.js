@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	activate: function(){
+		imagesLoaded(".swiper-wrapper").on("done", () => {
+			console.log('images Loaded');
+		});
 		Ember.run.scheduleOnce('afterRender', this, function() {
-			imagesLoaded(".swiper-wrapper").on("done", function() {
+			imagesLoaded(".swiper-wrapper").on("done", () => {
 
 				var mySwiper = new Swiper ('.swiper-container', {
 		    		loop: true,
