@@ -23,7 +23,7 @@
 
 <div id="products-index-component-wrapper">
 	{{#each dynamicallyFilteredProducts as |p|}}
-		{{product-listing product=p class="products-index-component"}}
+		{{product-listing product=p selectedProduct=(mut selectedProduct) class="products-index-component"}}
 	{{/each}}		
 </div>	
 

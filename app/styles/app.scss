@@ -319,7 +319,48 @@ body{
 	position:absolute;
 	top:5%;
 	left:0%;
+	
 	.products-index-component{
+
+		@extend .fastTransition;
+		border-radius:2vw / 4vh;
+		
+		-webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
+		box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.75);
+		//.liquid-container{	
+		//.liquid-child{
+		#productExpanded{
+			margin:0.5%;
+			padding:0.5%;
+			border-radius:2vw / 4vh;
+			border:2px solid $primaryRed;
+			
+			display:table;
+			
+			#productExpandedImage{
+				width:20vh;
+				display:table-cell;
+			}
+			#productsExpandedBody{
+				vertical-align:middle;
+				display:table-cell;
+				padding:1%;
+				text-align: justify;
+				#productExpandedHeading{
+					text-align:left;	
+					text-indent: 1em;
+				}
+			}
+			&:hover{
+				-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.75);
+				-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.75);
+				box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.75);
+			}
+		}
+		//}
+		//}
+
 		display:inline-block;
 		width:$productWrapperWidth;
 		.products-index-img{
@@ -345,6 +386,7 @@ body{
 		}
 	}
 }
+/*
 .productModal{
 	width:50%;
 	//background-color: #fff;
@@ -364,7 +406,7 @@ body{
 			border-bottom: 2px solid $primaryDarkGray;
 		}
 	}
-}
+}*/
 
 .kwicks {
     width: 100%;
@@ -410,6 +452,7 @@ body{
 //handling activated product route in collapsed section
 .kwicks-collapsed
 {
+
 	//hide bottle name && select_box of collapsed section
 	#productsOptionsContainer{
 		display:none;
@@ -423,6 +466,9 @@ body{
 		@extend .slowTransition;
 		.products-index-component{
 			width:21%;
+			.productExpanded{
+				display:none;
+			}
 			.products-index-img{
 				width:100%;
 			}
@@ -521,6 +567,13 @@ body{
 	background: -webkit-linear-gradient(left, $primaryGradient 15%, $primaryWhite 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, $primaryGradient 15%, $primaryWhite 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+.fastTransition{
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-ms-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
 }
 .transition{
 	-webkit-transition: all 0.8s ease-out;

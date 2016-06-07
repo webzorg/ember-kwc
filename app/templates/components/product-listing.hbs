@@ -1,26 +1,17 @@
-
-<img src="/assets/images/products/thumb/{{product.image}}.png" alt="" class="products-index-img" {{action "toggleModal"}}>
-<div class="products-index-text-wrapper" {{action "toggleModal"}}>
-	<div class="products-index-heading">{{product.name}}</div>
-	<div class="products-index-description">{{product.sdescription}}</div>
-</div>
-
-{{#liquid-if isShowingModal class="productExpanded"}}
+{{#liquid-unless selected class="productsExpanded"}}
+  <img src="/assets/images/products/thumb/{{product.image}}.png" alt="" class="products-index-img" {{action "expandProduct"}}>
   
+  <div class="products-index-text-wrapper" {{action "expandProduct"}}>
+    <div class="products-index-heading">{{product.name}}</div>
+    <div class="products-index-description">{{product.sdescription}}</div>
+  </div>
 {{else}}
-  
-{{/liquid-if}}
-
-{{#if isShowingModal}}
-  {{#modal-dialog close="toggleModal"
-  	translucentOverlay=false
-  	container-class="productModal"
-  	clickOutsideToClose=true
-  }}
-    <img id="products-modal-image" src="/assets/images/products/{{product.image}}.png" alt="{{product.name}}">
-    <div id="products-modal-text">
-		<div id="products-modal-heading">{{product.name}}</div>
-    	{{product.description}}
+  <div id="productExpanded" {{action "expandProduct"}}>
+    <img id="productExpandedImage" src="/assets/images/products/{{product.image}}.png" alt="{{product.name}}">
+    <div id="productsExpandedBody">
+      <h3 id="productExpandedHeading">{{product.name}}</h3>
+      {{product.description}}
     </div>
-  {{/modal-dialog}}
-{{/if}}
+  </div>
+{{/liquid-unless}}
+

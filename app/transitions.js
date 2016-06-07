@@ -3,6 +3,7 @@ export default function(){
   let transition_lvl_1_2 = 'fade';
   //let transition_lvl_2 = 'crossFade';
   let optionsToggle = 'fade';
+  //let productsExpanded = 'scale';
   let duration = 400;
   /*
   toLeft, toRight, toUp, toDown
@@ -13,6 +14,13 @@ export default function(){
     scrollThen
     scale
     wait this.use('wait', 1000, { then: 'fade' })
+
+  this.transition(
+    this.hasClass('productsExpanded'),
+    this.toValue(true),
+    this.use('wait', 400, { then: 'fade', duration: duration}),
+    this.reverse('wait', 400, {then: 'fade', duration: duration})
+  );
 */
   this.transition(
     this.hasClass('productsLiquidOptionsHandle'),
