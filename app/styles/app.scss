@@ -128,6 +128,12 @@ body{
 	left: $desktopLeftBuffer;
 	width: $desktopContentWidth;
 	height: $desktopTopBuffer;
+
+	background: $primaryGradient; /* Old browsers */
+	background: -moz-linear-gradient(top, $primaryLightGray 0%, $primaryGradient 25%, $primaryGradient 75%, $primaryLightGray 100%);
+	background: -webkit-linear-gradient(top, $primaryLightGray 0%,$primaryGradient 25%,$primaryGradient 75%, $primaryLightGray 100%); 
+	background: linear-gradient(to right, $primaryLightGray 0%,$primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );
 	span{
 		position:inherit;
 		top:50%;
