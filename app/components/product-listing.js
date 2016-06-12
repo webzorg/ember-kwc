@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   				Ember.$('.products-index-component').removeAttr('style');
   				this.$().closest('.products-index-component').css({
 					'width' : '97%',
-					'background-color' : '#DCDCDC',
+					//'background-color' : '#DCDCDC',
 					'margin' : '1.5%',
 				});
 			
