@@ -1,15 +1,19 @@
 {{#liquid-unless selected class="productsExpanded"}}
-  <img src="/assets/images/products/thumb/{{product.image}}.png" alt="" class="products-index-img" {{action "expandProduct"}}>
-  
-  <div class="products-index-text-wrapper" {{action "expandProduct"}}>
-    <div class="products-index-heading">{{product.name}}</div>
-    <div class="products-index-description">{{product.sdescription}}</div>
+  <div {{action "expandProduct"}}>
+    <img src="/assets/images/products/thumb/{{product.image}}.png" alt="{{product.name}}" class="products-index-img">
+
+    <div class="products-index-text-wrapper">
+      <div class="products-index-heading">{{product.name}}</div>
+      <div class="products-index-description">{{product.sdescription}}</div>
+    </div>
   </div>
 {{else}}
   <div id="productExpanded" {{action "expandProduct"}}>
     <img id="productExpandedImage" src="/assets/images/products/{{product.image}}.png" alt="{{product.name}}">
+    
     <div id="productsExpandedBody">
       <span id="productExpandedHeading">{{product.name}}</span>
+      <br/>
       {{product.description}}
     </div>
   </div>

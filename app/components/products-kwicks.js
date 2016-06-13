@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 			behavior: 'menu',
 		    maxSize: '75%',
 		    spacing: 0,
-		    duration: 1200,
+		    duration: 1000,
 		});
 	},
 	actions: {

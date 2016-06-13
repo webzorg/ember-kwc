@@ -14,14 +14,14 @@ export default function(){
     scrollThen
     scale
     wait this.use('wait', 1000, { then: 'fade' })
-
+  
   this.transition(
     this.hasClass('productsExpanded'),
     this.toValue(true),
-    this.use('wait', 400, { then: 'fade', duration: duration}),
-    this.reverse('wait', 400, {then: 'fade', duration: duration})
-  );
-*/
+    this.use('crossFade', {duration: 800}),
+    this.reverse('crossFade', {duration: 800})
+  );*/
+
   this.transition(
     this.hasClass('productsLiquidOptionsHandle'),
     this.toValue(true),

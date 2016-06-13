@@ -12,24 +12,15 @@
   position: relative;
   line-height: $lineHeight;
   max-height: $lineHeight * $lineCount; 
-  text-align: justify;
+  text-align: left;
   margin-right: -1em;
   padding-right: 1em;
-  &:before {
+  /*&:before {
     content: '...';
     position: absolute;
     right: 0;
     bottom: 0;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    background: $bgColor;
-  }
+  }*/
 }
 
 
@@ -47,7 +38,7 @@ $desktopTopBuffer:10%;
 $desktopContentWidth:100%-$desktopLeftBuffer;
 $desktopContentHeight:100%-$desktopTopBuffer;
 
-$mobileLeftBuffer:15%;
+$mobileLeftBuffer:14%;
 $mobileTopBuffer:10%;
 $mobileContentWidth:100%-$mobileLeftBuffer;
 $mobileContentHeight:100%-$mobileTopBuffer;
@@ -72,6 +63,7 @@ $productTextWidthMedium:70%;
     src: url(/assets/eng_font.ttf);
 }
 body{
+	font-size:16px;
 	color:$primaryBlack;
 	font-family: eng;
 	a{
@@ -128,22 +120,16 @@ body{
 	left: $desktopLeftBuffer;
 	width: $desktopContentWidth;
 	height: $desktopTopBuffer;
-
-	background: $primaryGradient; /* Old browsers */
-	background: -moz-linear-gradient(top, $primaryLightGray 0%, $primaryGradient 25%, $primaryGradient 75%, $primaryLightGray 100%);
-	background: -webkit-linear-gradient(top, $primaryLightGray 0%,$primaryGradient 25%,$primaryGradient 75%, $primaryLightGray 100%); 
-	background: linear-gradient(to right, $primaryLightGray 0%,$primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );
+	
+	@extend .gradientFullWidth;
 	span{
+		margin-top:0.3%;
 		position:inherit;
 		top:50%;
 		left:50%;
 		transform: translate(-50%,-50%);
-		font-size:2em;
-
+		font-size:3.8em;
 		white-space: nowrap;
-		//padding:10px;
-		//margin:0px;
 	}
 }
 #navigationWrapper{
@@ -195,6 +181,8 @@ body{
 	left:$desktopLeftBuffer;
 	height:$desktopContentHeight;
 	width:$desktopContentWidth;
+	@extend .gradientFullWidth;
+
 	.liquid-child{
 		height:100%;
 	}
@@ -203,27 +191,20 @@ body{
 .swiper-container {
    	height:100%;
     .swiper-wrapper{
-    	background: $primaryGradient; /* Old browsers */
-		background: -moz-linear-gradient(top, $primaryLightGray 0%, $primaryGradient 25%, $primaryGradient 75%, $primaryLightGray 100%);
-		background: -webkit-linear-gradient(top, $primaryLightGray 0%,$primaryGradient 25%,$primaryGradient 75%, $primaryLightGray 100%); 
-		background: linear-gradient(to bottom, $primaryLightGray 0%,$primaryGradient 25%, $primaryGradient 75%, $primaryLightGray 100%); 
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );
-		
     	.swiper-slide{
-    		//background-image: url('/assets/images/slideshow/01.jpg');
     		background-size:contain;
     		background-repeat:no-repeat;
     		background-position:center;
     		
     	}
     }
-} 
+}
 
 .swiper-pagination-bullet {
-  width: 3vw;
-  height: 2vh;
+  width: 3em;
+  height: 1.6em;
   background: $primaryDarkGray;
-  border-radius: 5px;
+  border-radius: 0.5em;
   opacity:0.8;
   &:hover{
   	-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.75);
@@ -260,8 +241,7 @@ body{
 	}
 }
 #aboutSection1{
-	/*
-	div{
+	/*div{
 		transform: translate(50%,50%);
 		width:50%;
 		height:50%;
@@ -269,8 +249,8 @@ body{
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
-	}
-	//*/
+		z-index:9999;
+	}//*/
 }
 #aboutSection2{}
 #aboutSection3{}
@@ -280,10 +260,11 @@ body{
 {
 	z-index: 1000;
 	position:absolute;
-	right:0;
-	top:0;
+	right:0.2em;
+	top:0.1em;
 	@extend .slowTransition;
 	#productsLiquidOptionsHandle{
+
 		float:right;
 		width:50px;
 		height:50px;
@@ -293,6 +274,7 @@ body{
 			@extend .optionsLogoDesign;
 		}
 		#productsOptionsInactive{
+
 			background-image: url("/assets/images/grapes.png");
 			background-size: 100%;
 			@extend .optionsLogoDesign;
@@ -318,69 +300,67 @@ body{
 }
 @keyframes grapePulse {
   0% {
-    box-shadow: 0 0 0 0 $primaryRed inset;
+  	box-shadow: 0 0 0 0 $primaryRed inset;
   }
   70% {
-      box-shadow: 0 0 0 6px $primaryRedOpaque inset;
+    box-shadow: 0 0 0 0.3em $primaryRedOpaque inset;
   }
   100% {
-      box-shadow: 0 0 0 0 $primaryRed inset;
+  	box-shadow: 0 0 0 0 $primaryRed inset;
   }
 }
+
 .productsOptionsContainerBackground{
 	background-color:$primaryLightGray;
 }
 
-#products-index-component-wrapper{
-	position:absolute;
-	top:5%;
-	left:0%;
-	
-	.products-index-component{
+.prouctsExpanded{
+	width:97% !important;
+	margin:1.5%;
 
-		@extend .fastTransition;
-		border-radius:2vw / 4vh;
-		
-		// -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
-		// -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
-		// box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.75);
-		//.liquid-container{	
-		//.liquid-child{
-		#productExpanded{
-			margin:0.5%;
-			padding:0.5%;
-			
+}
+
+#products-index-component-wrapper{
+	margin:1%;
+	position:absolute;
+	top:4%;
+	left:0%;
+
+	.products-index-component{
+		padding:1%;
+		&:hover{
+			-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+		}
+		@extend .transition;
+
+		//.liquid-container{.liquid-child{
+		#productExpanded{			
 			display:table;
-			
 			#productExpandedImage{
-				width:20vh;
+				width:10em;
 				display:table-cell;
 			}
 			#productsExpandedBody{
 				vertical-align:middle;
 				display:table-cell;
 				padding:1%;
-				text-align: justify;
+				text-align: left;
 				#productExpandedHeading{
-					text-align:left;	
-					text-indent: 1em;
+					font-size: 2em;
+					display:block;
+					border-bottom: 0.2em solid $primaryDarkGray;
 				}
 			}
-			&:hover{
-				-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-				-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-				box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-
-			}
-		}
-		//}
-		//}
-
+		}//}}
+	
 		display:inline-block;
 		width:$productWrapperWidth;
 		.products-index-img{
 			display:inline-block;
 			width:$productImageWidth;
+			max-width:5.5em;
 			vertical-align: bottom;
 		}
 		.products-index-text-wrapper{
@@ -390,38 +370,17 @@ body{
 			.products-index-heading{
 				text-transform: uppercase;
 				white-space: nowrap;
-				font-size: 1.3vw;
-				border-bottom: 2px solid $primaryDarkGray;
+				font-size: 1.2em;
+				border-bottom: 0.1em solid $primaryDarkGray;
 			}
 			.products-index-description{
 				color:$primaryDarkGray;
-				font-size: 1vw;
+				font-size: 1em;
 				@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);  
 			}
 		}
 	}
 }
-/*
-.productModal{
-	width:50%;
-	//background-color: #fff;
-	//align:middle;
-	//color:$primaryBlack;
-	#products-modal-image {
-		display:inline-block;
-		width:20%;
-		vertical-align:bottom;
-	}
-	#products-modal-text{
-		display:inline-block;
-		width:79%;
-		vertical-align: top;
-		#products-modal-heading{
-			font-size: 1.5em;
-			border-bottom: 2px solid $primaryDarkGray;
-		}
-	}
-}*/
 
 .kwicks {
     width: 100%;
@@ -467,7 +426,6 @@ body{
 //handling activated product route in collapsed section
 .kwicks-collapsed
 {
-
 	//hide bottle name && select_box of collapsed section
 	#productsOptionsContainer{
 		display:none;
@@ -479,25 +437,23 @@ body{
 		top:50%;
 		transform:translateY(-50%);
 		@extend .slowTransition;
+		#productExpanded{
+			display:none;
+		}
 		.products-index-component{
 			width:21%;
-			.productExpanded{
-				display:none;
-			}
 			.products-index-img{
 				width:100%;
 			}
 		}
 	}
-	div{//aboutSection1,2,3	
-
+	div{//aboutSection1,2,3
 		.aboutHeading{
-			top:50%;//alternative 47.6  translate 0,83
+			top:50%;
 			left:50%;
-			transform-origin:left;
-			-ms-transform: translate(0%,50%) rotate(-90deg); /* IE 9 */
-		    -webkit-transform: translate(0%,50%) rotate(-90deg); /* Chrome, Safari, Opera */
-		    transform: translate(0%,50%) rotate(-90deg);
+			-ms-transform: translate(-50%,-50%) rotate(-90deg); /* IE 9 */
+		    -webkit-transform: translate(-50%,-50%) rotate(-90deg); /* Chrome, Safari, Opera */
+		    transform: translate(-50%,-50%) rotate(-90deg);
 		    @extend .transition;
 		}
 		.about-text{
@@ -522,6 +478,9 @@ body{
 		top:0 !important;
 		height:100% !important;
 	}
+	body{
+		font-size:8px;
+	}
 }
 @include breakpoint(medium down){
 	#liquid1{
@@ -533,9 +492,20 @@ body{
 	#navigationWrapper{
 		width:$mobileLeftBuffer;
 	}
-
+	#banner{
+		left: $mobileLeftBuffer;
+		width: $mobileContentWidth;
+		height: $mobileTopBuffer;
+		span{
+			font-size:2.2em;
+		}
+	}
+	body{
+		font-size:12px;
+	}
 }
 @include breakpoint(medium){
+
 	#navigationWrapper{
 		font-size:$mediumNavigationFontSize;
 	}
@@ -582,6 +552,13 @@ body{
 	background: -webkit-linear-gradient(left, $primaryGradient 15%, $primaryWhite 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, $primaryGradient 15%, $primaryWhite 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+.gradientFullWidth{
+	background: $primaryGradient; /* Old browsers */
+	background: -moz-linear-gradient(left, $primaryLightGray 0%, $primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%);
+	background: -webkit-linear-gradient(left, $primaryLightGray 0%, $primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%); 
+    background: linear-gradient(to right, $primaryLightGray 0%,$primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );	
 }
 .fastTransition{
 	-webkit-transition: all 0.4s ease-out;

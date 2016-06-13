@@ -14,17 +14,11 @@ export default Ember.Component.extend({
   			if(!this.get('selected'))
   			{
   				this.set('selectedProduct', this.get('product'));
-
-  				Ember.$('.products-index-component').removeAttr('style');
-  				this.$().closest('.products-index-component').css({
-					'width' : '97%',
-					//'background-color' : '#DCDCDC',
-					'margin' : '1.5%',
-				});
-			
-  			}else{
-  				Ember.$('.products-index-component').removeAttr('style');
-  			 	this.set('selectedProduct', null);
+  				Ember.$('.products-index-component').removeClass("prouctsExpanded");
+  				this.$().closest('.products-index-component').addClass("prouctsExpanded");
+			}else{
+  				Ember.$('.products-index-component').removeClass("prouctsExpanded");
+  				this.set('selectedProduct', null);
   			}  			
   		}
   	}
