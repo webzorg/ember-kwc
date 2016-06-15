@@ -8,6 +8,11 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "banner": "kakuri gvinis marani",
+  "about": "o nas",
+  "products": "praduqti",
+  "news": "novosti",
+  "awards": "nagrajdenia",
   "en": "English",
   "ka": "ქართული",
   "ru": "ruski",

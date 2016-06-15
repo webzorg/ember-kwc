@@ -8,6 +8,11 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "banner": "KAKHURI GVINIS MARANI",
+  "about": "About",
+  "products": "Products",
+  "news": "News",
+  "awards": "Awards",
   "en": "English",
   "ka": "ქართული",
   "ru": "ruski",

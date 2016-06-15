@@ -5,6 +5,11 @@ export default Ember.Route.extend({
     	Ember.run.schedule('afterRender', this, function() {
 			Ember.$("#loader").remove();
 		});
+    },
+    actions: {
+	     refreshModel: function(){
+	     	this.transitionTo("index");
+	     }
     }
 
 });

@@ -14,7 +14,8 @@ export default Ember.Component.extend({
   actions: {
   	setLocale(selectedLocaleTemp) {
 		this.set('selectedLanguage', selectedLocaleTemp);
-      	this.set('i18n.locale', this.get('selectedLanguage').id);  		
+      	this.set('i18n.locale', this.get('selectedLanguage').id);
+      	this.sendAction('refreshModel');
 	}
   }
 });

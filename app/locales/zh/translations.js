@@ -8,6 +8,11 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "banner": "Chinchuku",
+  "about": "chinchao",
+  "products": "chinchao",
+  "news": "chinchao",
+  "awards": "chinchao",
   "en": "English",
   "ka": "ქართული",
   "ru": "ruski",

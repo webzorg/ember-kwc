@@ -6,7 +6,6 @@ export default JSONAPIAdapter.extend({
 	namespace: Ember.computed.alias('i18n.locale'),
 	//host: 'http://api.socialatlas.net',
 	pathForType: function(type) {
-		//console.log(this.set('i18n.locale', 'ru'));
-    	return Ember.String.pluralize(Ember.String.underscore(type));
+		return Ember.String.pluralize(Ember.String.underscore(type));
   	}
 });

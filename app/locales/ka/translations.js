@@ -8,6 +8,11 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  "banner": "კახური ღვინის მარანი",
+  "about": "ჩვენზე",
+  "products": "პროდუქცია",
+  "news": "სიახლე",
+  "awards": "ჯილდოები",
   "en": "English",
   "ka": "ქართული",
   "ru": "ruski",

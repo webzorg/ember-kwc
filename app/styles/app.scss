@@ -63,6 +63,7 @@ $productTextWidthMedium:70%;
     src: url(/assets/eng_font.ttf);
 }
 body{
+
 	font-size:16px;
 	color:$primaryBlack;
 	font-family: eng;
@@ -73,12 +74,6 @@ body{
 			color:$primaryBlack;
 		}
 	}
-}
-.language{
-	position:fixed;
-	right:20px;
-	top:20px;
-	width:100px;
 }
 #copyright{
 	position:fixed;
@@ -138,6 +133,22 @@ body{
 		white-space: nowrap;
 	}
 }
+.language{
+	position:absolute;
+	width:100%;
+	bottom:0px;
+	z-index:9999;
+	text-align:center;
+	div{
+
+	outline:none;
+		border:none;
+
+		&:hover{
+			background-color:$primaryDarkGray;
+		}
+	}
+}
 #navigationWrapper{
 	font-size:$navigationFontSize;
 	position:absolute;
@@ -164,7 +175,7 @@ body{
 		z-index:100;
 		li{
 			padding:0px 0px 0px 0px;			
-			height:20%;
+			height:19%;
 			width:100%;	
 			display:table;
 			a{
@@ -604,8 +615,8 @@ $ember-power-select-highlighted-color: $primaryBlack !default;
 //Borders
 $ember-power-select-border-color: $primaryDarkGray !default;
 $ember-power-select-focus-border-color: $ember-power-select-border-color !default;
-$ember-power-select-default-border: 1px solid $ember-power-select-border-color !default;
-$ember-power-select-default-focus-border: 1px solid $ember-power-select-focus-border-color !default;
+$ember-power-select-default-border: 0px solid $ember-power-select-border-color !default;
+$ember-power-select-default-focus-border: 0px solid $ember-power-select-focus-border-color !default;
 
 //Borders radius
 $ember-power-select-default-border-radius: 0px !default; // General border radius

@@ -1,9 +1,10 @@
 <nav>
 	<ul>
 		<li id="logoWrapper">{{#link-to "index"}}{{/link-to}}</li>
-		<li>{{#link-to "about"}}About{{/link-to}}</li>
-		<li>{{#link-to "products"}}Products{{/link-to}}</li>
-		<li>{{#link-to "news"}}News{{/link-to}}</li>
-		<li>{{#link-to "awards"}}Awards{{/link-to}}</li>
+		<li>{{#link-to "about"}}{{t "about"}}{{/link-to}}</li>
+		<li>{{#link-to "products"}}{{t "products"}}{{/link-to}}</li>
+		<li>{{#link-to "news"}}{{t "news"}}{{/link-to}}</li>
+		<li>{{#link-to "awards"}}{{t "awards"}}{{/link-to}}</li>
 	</ul>
 </nav>
+	{{language-select refreshModel="refreshModel" class="language"}}
