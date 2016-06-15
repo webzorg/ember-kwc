@@ -2,9 +2,11 @@ import JSONAPIAdapter from 'ember-data/adapters/json-api';
 import Ember from 'ember';
 
 export default JSONAPIAdapter.extend({
-	//namespace: 'api'
-	host: 'http://api.socialatlas.net',
+	i18n: Ember.inject.service(),
+	namespace: Ember.computed.alias('i18n.locale'),
+	//host: 'http://api.socialatlas.net',
 	pathForType: function(type) {
+		//console.log(this.set('i18n.locale', 'ru'));
     	return Ember.String.pluralize(Ember.String.underscore(type));
   	}
 });

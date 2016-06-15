@@ -1,0 +1,11 @@
+{{yield}}
+
+{{#power-select 
+	selected=selectedLanguage
+	searchEnabled=false
+	allowClear=false
+	options=locales
+	onchange=(action "setLocale") 	
+as |locale|}}
+	{{locale.text}}
+{{/power-select}}
