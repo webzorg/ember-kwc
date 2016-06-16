@@ -1,16 +1,13 @@
 {{outlet}}
-    <!-- colored -->
-    <div class="ih-item circle colored effect17"><a href="#">
-        <div class="img"><img src="assets/images/round.jpg" alt="img"></div>
-        <div class="info">
-          <h3>Factory</h3>
-          <p>Using traditional and latest winemaking technologies </p>
-        </div></a></div>
-    <!-- end colored -->
 
-      <div class="ih-item circle colored effect17"><a href="#">
-        <div class="img"><img src="assets/images/round.jpg" alt="img"></div>
-        <div class="info">
-         <div class="img"><img src="assets/images/round1.jpg" alt="img"></div>
-        </div></a></div>
-    <!-- end colored -->
+{{#zf-accordion id="newsAccordionWrapper"}}
+  {{#each model as |news index|}}
+    <li class="accordion-item {{custom-if index 0 "is-active"}}" data-accordion-item>
+      <a class="accordion-title">{{news.newsTitle}}</a>
+      <div class="accordion-content" data-tab-content>
+        {{news.newsBody}}
+        {{index}}
+      </div>
+    </li>
+  {{/each}}
+{{/zf-accordion}}

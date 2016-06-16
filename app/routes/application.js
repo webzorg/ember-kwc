@@ -8,7 +8,13 @@ export default Ember.Route.extend({
     },
     actions: {
 	     refreshModel: function(){
-	     	this.transitionTo("index");
+	     	let currentRouteName = this.controllerFor("application").get("currentRouteName");
+	     	if(currentRouteName==="about.index" || currentRouteName ==="products.index"){
+	     		this.transitionTo("index");
+	     	}	
+	     	else{
+	     		this.refresh();
+	     	}
 	     }
     }
 

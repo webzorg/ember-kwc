@@ -1,7 +1,7 @@
 @import "settings";
 @import "foundation";
-@import "ember-modal-dialog/ember-modal-structure";
-@import "ember-modal-dialog/ember-modal-appearance";
+//@import "ember-modal-dialog/ember-modal-structure";
+//@import "ember-modal-dialog/ember-modal-appearance";
 @include foundation-everything;
 //@import 'bower_components/photoswipe/src/css/main';
 //@import 'bower_components/jquery.kwicks/jquery.kwicks.min.css';
@@ -199,9 +199,12 @@ body{
 	height:$desktopContentHeight;
 	width:$desktopContentWidth;
 	@extend .gradientFullWidth;
-
+	
 	.liquid-child{
 		height:100%;
+	}
+	& > .liquid-child{
+		overflow:auto;
 	}
 }
 /* Index Route */
@@ -334,7 +337,6 @@ body{
 .prouctsExpanded{
 	width:97% !important;
 	margin:1.5%;
-
 }
 
 #products-index-component-wrapper{
@@ -481,6 +483,43 @@ body{
 		}
 	}
 }
+
+/* News Route */
+#newsAccordionWrapper{
+	width:90%;
+	margin:0 auto;
+	border:none;
+	background-color: rgba(0,0,0,0);
+	li{
+		border-top:1px solid $primaryDarkGray;
+		a{
+			color:$primaryBlack;
+			font-size:1.5em;
+			border:none;
+		}
+		&.is-active{
+			border-left:0.3em solid $primaryRed;
+			border-right:0.3em solid $primaryRed;
+			& a{
+				border-bottom:0.2em solid $primaryRed;
+				color:$primaryRed;
+			}
+		}
+		.accordion-content{
+			border:none;
+		}
+	}
+	.accordion-content{
+		background-color: rgba(255,255,255,0.5);
+	}
+	a:hover{
+		background-color: $primaryLightGray;
+		color:$primaryBlack;
+	}
+}
+
+/* Awards Route */
+
 
 ////////////////////////////////////////////////////////////////
 
