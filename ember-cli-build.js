@@ -10,7 +10,7 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       //generateAssetMap: true,
-      exclude: ['images/products/', 'images/slideshow/']
+      exclude: ['images/products/', 'images/slideshow/', 'images/awards/']
     }
   });
   app.import('bower_components/imagesloaded/imagesloaded.pkgd.min.js');
