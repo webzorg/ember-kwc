@@ -1,6 +1,8 @@
 {{outlet}}
 
-{{#each model as |award|}}
-		{{award.awardTitle}}<br/> 
-		{{award.awardBody}}
-{{/each}}	
+<div id="awards-index-component-wrapper">
+	{{#each model as |award|}}
+		{{award-listing award=award selectedAward=(mut selectedAward) class="awards-index-component"}}
+	{{/each}}
+</div>
+	

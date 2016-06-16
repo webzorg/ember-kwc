@@ -20,7 +20,16 @@ export default function(){
     this.toValue(true),
     this.use('crossFade', {duration: 800}),
     this.reverse('crossFade', {duration: 800})
-  );*/
+  );
+
+  this.transition(
+    this.hasClass('awardsExpanded'),
+    this.toValue(true),
+    this.use('toLeft', {duration: 1000}),
+    this.reverse('toRight', {duration: 1000})
+  );
+  */
+  
 
   this.transition(
     this.hasClass('productsLiquidOptionsHandle'),

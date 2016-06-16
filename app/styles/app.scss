@@ -140,10 +140,8 @@ body{
 	z-index:9999;
 	text-align:center;
 	div{
-
-	outline:none;
+		outline:none;
 		border:none;
-
 		&:hover{
 			background-color:$primaryDarkGray;
 		}
@@ -159,7 +157,7 @@ body{
 	background-color:$primaryLightGray;
 	overflow:hidden;
 	/* nav menu */
-	ul {
+	ul{
 		:not(:first-child) {	
    			background-image: url("/assets/images/nav_item_decor.png");
 			background-repeat: no-repeat;
@@ -306,8 +304,7 @@ body{
 		}
 	}
 	.productsLiquidOptions{
-		float:left;
-		
+		float:left;		
 		margin:9px 9px;
 		width:150px;
 	}
@@ -518,8 +515,66 @@ body{
 	}
 }
 
-/* Awards Route */
+.awardsExpanded{
+	width:97% !important;
+	margin:1.5%;
+}
 
+/* Awards Route */
+#awards-index-component-wrapper{
+	.awards-index-component{
+		display:inline-block;
+		width:13%;
+		&:hover{
+			-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+		}
+		@extend .transition;
+
+		.awardsExpanded{
+			//text-align:center;
+			.awards-index-img{		
+				border:3px solid red;
+				display:inline-block;
+				//vertical-align: bottom;
+			}
+			.awards-index-heading{
+				text-transform: uppercase;
+				white-space: nowrap;
+				font-size: 1.2em;
+				text-align:center;
+			}
+
+			#awardExpanded{
+				border:5px solid blue;
+				display:table;
+				//height:10%;
+				#awardExpandedImage{
+					//vertical-align:middle;
+					border:5px solid red;
+					display:table-cell;
+					vertical-align:middle;
+					//height:100%;
+				}	
+				#awardExpandedBody{
+					vertical-align:top;
+					//width:60%;
+					//vertical-align:middle;
+					display:table-cell;
+					//padding:1%;
+					//text-align: left;
+					#awardExpandedHeading{
+						font-size: 2em;
+						//display:block;
+						border-bottom: 0.2em solid $primaryDarkGray;
+					}
+				}
+			}//#expanded
+
+		}
+	}
+}
 
 ////////////////////////////////////////////////////////////////
 

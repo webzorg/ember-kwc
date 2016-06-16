@@ -1,0 +1,16 @@
+{{#liquid-unless awardSelected class="awardsExpanded"}}
+  <div {{action "expandAward"}}>
+    <img src="/assets/images/awards/{{award.image}}.png" alt="{{award.name}}" class="awards-index-img">   
+    <div class="awards-index-heading">{{award.awardTitle}}</div>
+  </div>
+{{else}}
+  <div id="awardExpanded" {{action "expandAward"}}>
+  	<img id="awardExpandedImage" src="/assets/images/awards/{{award.image}}.png" alt="{{award.name}}">    
+    <span id="awardExpandedBody">
+      <span id="awardExpandedHeading">{{award.awardTitle}}</span>
+      <br/>
+      {{award.awardBody}}
+    </span>
+  </div>
+{{/liquid-unless}}
+
