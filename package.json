@@ -53,5 +53,7 @@
     "liquid-fire": "0.23.0",
     "loader.js": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ember-cli-lightbox": "0.0.3"
+  }
 }

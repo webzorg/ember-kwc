@@ -9,11 +9,15 @@
   </div>
 {{else}}
   <div id="productExpanded" {{action "expandProduct"}}>
-    <img id="productExpandedImage" src="/assets/images/products/{{product.image}}.png" alt="{{product.name}}">
     
+    <div id="imageWrapper">
+      {{#light-box class="productExpandedImage" href=(concat "/assets/images/products/" product.image ".png") data-lightbox="product" data-title=(concat product.name) }}
+        <img src="/assets/images/zoom_icon.png" alt="Zoom Icon" class="zoom-icon">
+      {{/light-box}}
+    </div>
+
     <div id="productsExpandedBody">
       <span id="productExpandedHeading">{{product.name}}</span>
-      <br/>
       {{product.description}}
     </div>
   </div>
