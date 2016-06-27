@@ -9,6 +9,7 @@ module.exports = function(defaults) {
       'foundationJs': 'all'
     },
     fingerprint: {
+      //enabled: false,
       //generateAssetMap: true,
       exclude: ['images/products/','images/products_section/', 'images/slideshow/', 'images/awards/']
     }
