@@ -10,13 +10,14 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       //generateAssetMap: true,
-      exclude: ['images/products/', 'images/slideshow/', 'images/awards/']
+      exclude: ['images/products/','images/products_section/', 'images/slideshow/', 'images/awards/']
     }
   });
   app.import('bower_components/imagesloaded/imagesloaded.pkgd.min.js');
   app.import('bower_components/Swiper/dist/js/swiper.jquery.min.js');
   app.import('bower_components/Swiper/dist/css/swiper.min.css');
   app.import('bower_components/jquery.kwicks/jquery.kwicks.min.js');
+
   //app.import('bower_components/ihover/src/ihover.css');//minimize it...
   //app.import('bower_components/photoswipe/dist/photoswipe-ui-default.min.js');
   

@@ -4,5 +4,6 @@ import attr from 'ember-data/attr';
 export default Model.extend({
 	awardTitle: attr(),
 	awardBody: attr(),
-	image: attr()
+	medal: attr(),
+	diploma: attr()
 });

@@ -1,6 +1,6 @@
 {{#liquid-unless selected class="productsExpanded"}}
   <div {{action "expandProduct"}}>
-    <img src="/assets/images/products/thumb/{{product.image}}.png" alt="{{product.name}}" class="products-index-img">
+    <img src="{{product.image}}" alt="{{product.name}}" class="products-index-img">
 
     <div class="products-index-text-wrapper">
       <div class="products-index-heading">{{product.name}}</div>
@@ -9,13 +9,12 @@
   </div>
 {{else}}
   <div id="productExpanded" {{action "expandProduct"}}>
-    
     <div id="imageWrapper">
-      {{#light-box class="productExpandedImage" href=(concat "/assets/images/products/" product.image ".png") data-lightbox="product" data-title=(concat product.name) }}
+      {{#light-box class="productExpandedImage" href=product.largeimg data-lightbox="product" data-title=product.name }}
         <img src="/assets/images/zoom_icon.png" alt="Zoom Icon" class="zoom-icon">
       {{/light-box}}
     </div>
-
+    
     <div id="productsExpandedBody">
       <span id="productExpandedHeading">{{product.name}}</span>
       {{product.description}}

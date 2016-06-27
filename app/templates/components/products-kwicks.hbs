@@ -1,7 +1,6 @@
 {{#each model.productsSectionData as |productsSectionData|}}
-	<div {{action 'switchProductSection' (concat "productsSection" productsSectionData.id) (concat "products.product-" productsSectionData.id)}} class="section products-section">
-		<div id="productsSection{{productsSectionData.id}}">
-		</div>
+	<div {{action 'switchProductSection' (concat "productsSection" productsSectionData.id) (concat "products.product-" productsSectionData.id)}} class="section products-section" id="productsKwicksSection{{productsSectionData.id}}">
+		<div id="productsSection{{productsSectionData.id}}"></div>
 		<span class="sectionHeading">{{productsSectionData.productsectionheading}}</span>
 	</div>
 {{/each}}
