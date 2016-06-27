@@ -9,9 +9,9 @@ module.exports = function(defaults) {
       'foundationJs': 'all'
     },
     fingerprint: {
-      //enabled: false,
+      enabled: false,
       //generateAssetMap: true,
-      exclude: ['images/products/','images/products_section/', 'images/slideshow/', 'images/awards/']
+      //exclude: ['images/products/','images/products_section/', 'images/slideshow/', 'images/awards/']
     }
   });
   app.import('bower_components/imagesloaded/imagesloaded.pkgd.min.js');
