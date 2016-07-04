@@ -1,10 +1,8 @@
 {{outlet}}
 
-<span class="aboutHeading">{{model.aboutsectionheading}}</span>
+<h1 class="aboutHeading">{{model.aboutsectionheading}}</h1>
 
 <div class="about-text">
-	{{#light-box class="aboutImage" href=model.image data-lightbox="aboutImage"}}
-        <img src="/assets/images/zoom_icon.png" alt="Zoom Icon" class="zoom-icon">
-    {{/light-box}}
-	{{model.sectionbody}}
+	{{light-box class="aboutImage" href=model.image data-lightbox="aboutImage"}}
+	<div>{{model.sectionbody}}</div>
 </div>

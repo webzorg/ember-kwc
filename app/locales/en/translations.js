@@ -13,8 +13,8 @@ export default {
   "products": "Products",
   "news": "News",
   "awards": "Awards",
-  "en": "English",
-  "ka": "ქართული",
-  "ru": "ruski",
-  "zh": "chinuri"
+  "en": "EN",
+  "ka": "KA",
+  "ru": "RU",
+  "zh": "ZH"
 };

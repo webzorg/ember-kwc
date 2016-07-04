@@ -6,12 +6,7 @@
 {{else}}
   <div id="awardExpanded" {{action "expandAward"}}>
   	
-    <div id="imageWrapper">
-      {{#light-box class="awardExpandedImage" href=award.diploma data-lightbox="awards" data-title=award.awardTitle}}
-        <img src="/assets/images/zoom_icon.png" alt="Zoom Icon" class="zoom-icon">
-      {{/light-box}}
-    </div>
-    
+    {{light-box class="awardExpandedImage" href=award.diploma data-lightbox="awards" data-title=award.awardTitle}}
     
     <span id="awardExpandedBody">
       <span id="awardExpandedHeading">{{award.awardTitle}}</span>

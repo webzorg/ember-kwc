@@ -5,10 +5,10 @@
     <li class="accordion-item {{custom-if index 0 "is-active"}}" data-accordion-item>
       <a class="accordion-title">{{news.newsTitle}} </a>
       <div class="accordion-content" data-tab-content>
-        {{#light-box class="newsImage" href=news.largeimg data-lightbox="newsImage"}}
-        	<img src="/assets/images/zoom_icon.png" alt="Zoom Icon" class="zoom-icon">
-    	{{/light-box}}
-        {{news.newsBody}}
+        <div>
+          {{light-box class="newsImage" href=news.largeimg data-lightbox="newsImage"}}
+          {{news.newsBody}}  
+        </div>
       </div>
     </li>
   {{/each}}

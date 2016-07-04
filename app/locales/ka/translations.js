@@ -13,9 +13,9 @@ export default {
   "products": "პროდუქცია",
   "news": "სიახლე",
   "awards": "ჯილდოები",
-  "en": "English",
-  "ka": "ქართული",
-  "ru": "ruski",
-  "zh": "chinuri"
+  "en": "EN",
+  "ka": "KA",
+  "ru": "RU",
+  "zh": "ZH"
   
 };
