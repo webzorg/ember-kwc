@@ -407,7 +407,7 @@ body{
 			display:table;
 			.productExpandedImage{
 				display:table-cell;
-				width:13%;
+				width:10%;
 				vertical-align:middle;
 				img{
 					width:100%;
@@ -528,6 +528,7 @@ body{
 
 /////////////////////////////////
 //handling activated product route in collapsed section
+/*
 .kwicks-collapsed
 {
 	//hide bottle name && select_box of collapsed section
@@ -555,8 +556,8 @@ body{
 		.aboutHeading{
 			top:50%;
 			left:50%;
-			-ms-transform: translate(-50%,-50%) rotate(-90deg); /* IE 9 */
-		    -webkit-transform: translate(-50%,-50%) rotate(-90deg); /* Chrome, Safari, Opera */
+			-ms-transform: translate(-50%,-50%) rotate(-90deg);
+		    -webkit-transform: translate(-50%,-50%) rotate(-90deg);
 		    transform: translate(-50%,-50%) rotate(-90deg);
 		    @extend .transition;
 		}
@@ -564,7 +565,7 @@ body{
 			display:none;
 		}
 	}
-}
+}*/
 
 /* News Route */
 #newsAccordionWrapper{
@@ -625,7 +626,7 @@ body{
 /* Awards Route */
 #awards-index-component-wrapper{
 	.awards-index-component{
-		width:16%;
+		width:10%;
 		display:inline-block;
 		@extend .fastTransition;
 		.awardsExpanded{
@@ -761,24 +762,123 @@ body{
 
 #orientation-warning {
 	position:absolute;
-	top:0px;
-	left:0px;
+	top:0;
+	left:0;
 	width: 100%; height: 100%;
 	z-index:10000;
 	background-color:rgba(0,0,0,0.8);
 	text-align: center;
-
-    display:none; 
+    display:none;
 }
 #orientation-warning td {
 	color:#ccc;
 	vertical-align: middle;
 }
+
+
+
+/*******************/
 /* Portrait tweaks */
 @include breakpoint(portrait) {
-    #orientation-warning {
-    	display: table;
+
+#banner{
+	z-index:100;
+	height:3.5%;
+	left:20%;
+	width:80%;
+	background:none !important;
+}
+#logoWrapper{
+    border-width:0.2em;
+}
+#navigationWrapper{
+	// position:absolute;
+	top:0;
+	// left:0;
+	height:$desktopLeftBuffer;	
+	width:100%;
+
+	/* nav menu */
+	ul{
+		:not(:first-child) {
+			margin-top:3.5%;
+			height:50%;
+			background-position: 10% 50%;
+			//background-size: 15%;
+		}
+		li{
+			float:left;		
+			height:100%;
+			width:20%;	
+			a{}a.active{}a:hover{}		
+		}
 	}
+}	
+
+#liquid1{
+	// position:absolute;
+	top:7%;
+	left:0;
+	height:93% !important;
+	width:100%;
+	
+	background: $primaryGradient; /* Old browsers */
+	background: -moz-linear-gradient(left, $primaryLightGray 0%, $primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%);
+	background: -webkit-linear-gradient(left, $primaryLightGray 0%, $primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%); 
+    background: linear-gradient(to bottom, $primaryLightGray 0%,$primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%) !important; 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );	
+
+	
+	.liquid-child{
+	//	height:100%;
+	}
+	& > .liquid-child{
+		//overflow:auto;
+	}
+}
+#newsAccordionWrapper{
+	margin-top:1em;
+}
+#awards-index-component-wrapper{
+	padding:2em 2em;
+}
+
+@include breakpoint(small down) {
+	#navigationWrapper{
+		font-size:$smallNavigationFontSize;
+		ul{
+			:not(:first-child) {
+				background-size:10%;
+				background-position: 0% 50%;
+			}
+			li{
+				a{
+					font-size:8px;
+				}
+			}
+		}
+	}
+	#banner{
+		display:inherit;
+		font-size:0.6em;
+	}
+	#liquid1{
+		top:7% !important;
+		//height:100% !important;
+	}
+	body{
+		//font-size:12px !important;
+	}
+	.swiper-pagination-bullet{
+		width:1.6em;
+	}
+}
+@include breakpoint(large){
+	#banner{
+		font-size:12px;
+	}
+}
+
 }
 
 
