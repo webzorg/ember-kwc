@@ -90,6 +90,9 @@ body{
 	a:active{
 		color:$primaryBlack;
 	}
+	a:visited{
+		color:$primaryBlack;
+	}
 }
 #copyright{
 	overflow:hidden;
@@ -146,7 +149,7 @@ body{
 	@extend .textNotSelectable;
 	@extend .gradientFullWidth;
 	cursor:default;
-	span{
+	a{
 		margin-top:0.3%;
 		position:inherit;
 		top:50%;
@@ -163,18 +166,15 @@ body{
 	bottom:0;
 	margin-right:0.3em;
 	margin-bottom:0.3em;
-	
 	.language{
 		text-align:center;
 		.languageTriggerClass{
-
 			border-radius:50%;
 			border:1px solid $primaryRedOpaque;
 			@extend .textNotSelectable;
 			&:hover{
 				background-color:$primaryRedOpaque;
 			}
-
 			padding:0;
 			font-size:1.5em;
 			width:2em;
@@ -202,7 +202,6 @@ body{
 		}
 	}
 }
-
 
 #navigationWrapper{
 	@extend .textNotSelectable;
@@ -295,7 +294,6 @@ body{
 /* About Route*/
 .about-section{
 	padding:0em 1em;
-	text-align: justify;
 	.aboutHeading{
 		text-indent:1em;
 	}
@@ -304,11 +302,14 @@ body{
 			float:right;
 			width:50%;
 			padding:0em 0em 0em 1em;
-			img{width:100%;border-radius:0em 0em 0em 1em;}
+			img{
+				width:100%;
+				border-radius:0em 0em 0em 1em;
+			}
 		}
 		font-size: 1.2em;
 		div{
-			text-indent: 2em;
+			white-space: pre-wrap;
 		}
 	}
 }
@@ -334,7 +335,6 @@ body{
 			@extend .optionsLogoDesign;
 		}
 		#productsOptionsInactive{
-
 			background-image: url("/assets/images/grapes.png");
 			background-size: 100%;
 			@extend .optionsLogoDesign;
@@ -355,7 +355,6 @@ body{
 	height:50px;
 	border-radius:50%;
 	background-position: center;
-	
 }
 @keyframes grapePulse {
   0% {
@@ -374,11 +373,9 @@ body{
   	box-shadow: 0 0 0 0 $primaryRed inset;
   }
 }
-
 .productsOptionsContainerBackground{
 	background-color:$primaryLightGray;
 }
-
 .prouctsExpanded{
 	width:97% !important;
 	margin:1.5%;
@@ -386,13 +383,11 @@ body{
 .products-index-component, .awards-index-component {
 	cursor:pointer;
 }
-
 #products-index-component-wrapper{
 	margin:1%;
 	position:absolute;
 	top:4%;
 	left:0%;
-
 	.products-index-component{
 		padding:1%;
 		&:hover{
@@ -401,7 +396,6 @@ body{
 			box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
 		}
 		@extend .fastTransition;
-
 		//.liquid-container{.liquid-child{
 		#productExpanded{
 			display:table;
@@ -410,15 +404,17 @@ body{
 				width:10%;
 				vertical-align:middle;
 				img{
+					min-width: 4em;
 					width:100%;
 				}
 			}
 			#productsExpandedBody{
+				white-space: pre-wrap;
 				vertical-align:middle;
 				display:table-cell;
 				padding:1%;
-				text-align: left;
 				#productExpandedHeading{
+					margin-bottom:0.5em;
 					font-size: 2em;
 					display:block;
 					border-bottom: 0.2em solid $primaryDarkGray;
@@ -452,7 +448,6 @@ body{
 		}
 	}
 }
-
 .section:not(.kwicks-selected)
 {
 	cursor: pointer;
@@ -597,10 +592,12 @@ body{
 			    clear:both;
 			}
 			div{
-				text-indent:1em;
+				width:100%;
+				white-space: pre-wrap;
+				//text-indent:1em;
 				font-size:1.2em;
-				float:right;
-				text-align:justify;
+				//float:right;
+				//text-align:justify;
 				.newsImage{
 					margin-left: 0.6em;
 					text-indent:0;
@@ -626,8 +623,15 @@ body{
 /* Awards Route */
 #awards-index-component-wrapper{
 	.awards-index-component{
-		width:10%;
+		margin-left:1em;
+		padding:0.5em 0.5em;
+		width:15%;
 		display:inline-block;
+		&:hover{
+			-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+			box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
+		}
 		@extend .fastTransition;
 		.awardsExpanded{
 			.awards-index-img{
@@ -635,8 +639,7 @@ body{
 				max-width:20em;
 			}
 			.awards-index-heading{
-				text-transform: uppercase;
-				white-space: nowrap;
+				text-transform: capitalize;
 				font-size: 1.2em;
 				text-align:center;
 			}
@@ -644,11 +647,6 @@ body{
 				padding-right:2em;
 				display:table;
 				width:100%;
-				&:hover{
-					-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-					-moz-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-					box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
-				}
 				.awardExpandedImage{
 					display:table-cell;
 					padding:1em;
@@ -663,11 +661,12 @@ body{
 					display:table-cell;
 					vertical-align:middle;
 					font-size:1.5em;
+					white-space:pre-wrap;
 					#awardExpandedHeading{
 						display:block;
 						font-size: 2em;
 						border-bottom: 0.1em solid $primaryDarkGray;
-						overflow:hidden;
+						//overflow:hidden;
 					}
 				}
 				&::after {
@@ -708,7 +707,6 @@ body{
 		height:2em;
 		line-height:2em;
 	}
-	
 	.languageDropDownClass{
 		ul{
 			li{
@@ -717,7 +715,6 @@ body{
 			}
 		}
 	}
-
 	#liquid1{
 		width:$mobileContentWidth;
 		height:$mobileContentHeight;
@@ -738,12 +735,8 @@ body{
 	body{
 		font-size:12px;
 	}
-
-
-	
 }
 @include breakpoint(medium){
-
 	#navigationWrapper{
 		font-size:$mediumNavigationFontSize;
 	}
@@ -759,7 +752,6 @@ body{
 	.products-index-heading{}
 	.products-index-description{}
 }
-
 #orientation-warning {
 	position:absolute;
 	top:0;
@@ -774,8 +766,6 @@ body{
 	color:#ccc;
 	vertical-align: middle;
 }
-
-
 
 /*******************/
 /* Portrait tweaks */
@@ -792,9 +782,7 @@ body{
     border-width:0.2em;
 }
 #navigationWrapper{
-	// position:absolute;
 	top:0;
-	// left:0;
 	height:$desktopLeftBuffer;	
 	width:100%;
 
@@ -828,7 +816,6 @@ body{
     background: linear-gradient(to bottom, $primaryLightGray 0%,$primaryWhite 25%, $primaryWhite 75%, $primaryLightGray 100%) !important; 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#606060',GradientType=0 );	
 
-	
 	.liquid-child{
 	//	height:100%;
 	}
@@ -860,7 +847,7 @@ body{
 	}
 	#banner{
 		display:inherit;
-		font-size:0.6em;
+		font-size:0.4em;
 	}
 	#liquid1{
 		top:7% !important;

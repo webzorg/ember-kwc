@@ -10,7 +10,7 @@ export default Ember.Route.extend({
     actions: {
 	    willTransition(transition){
 	    	if(transition.targetName==="products.index"){
-	    		transition.abort();
+	    		this.controllerFor('products').send('resetKwicks');
 	    	}
 	    }
     }

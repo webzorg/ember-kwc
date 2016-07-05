@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 	actions: {
 	    willTransition(transition){
 	    	if(transition.targetName==="about.index"){
-	    		transition.abort();
+	    		this.controllerFor('about').send('resetKwicks');
 	    	}
 	    }
     }

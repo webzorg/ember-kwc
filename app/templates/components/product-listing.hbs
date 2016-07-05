@@ -11,8 +11,7 @@
   <div id="productExpanded" {{action "expandProduct"}}>
     {{light-box class="productExpandedImage" href=product.largeimg data-lightbox="product" data-title=product.name }}
     <div id="productsExpandedBody">
-      <span id="productExpandedHeading">{{product.name}}</span>
-      {{product.description}}
+      <span id="productExpandedHeading">{{product.name}}</span>{{product.description}}
     </div>
   </div>
 {{/liquid-unless}}
