@@ -292,7 +292,7 @@ div.generic-content-images{
 			float:left;
 			border:0.2em solid transparent;
 			.lazy-image-container{
-				min-height: inherit;
+				//min-height: inherit;
 				.lazy-image{border-radius:0.5em;}
 			}
 			&:hover {

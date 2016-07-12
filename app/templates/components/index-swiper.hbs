@@ -1,22 +1,13 @@
 {{yield}}
-<!-- Slider main container(component itself) -->
-    <!-- Additional required wrapper -->
-
-
-<img src="assets/images/loader.gif" alt="" id="loader-gif">
 
 
 <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
-    <div class="swiper-slide"></div>
+    {{#each model.imagesArray as |slide|}}
+        <div data-background="{{slide}}" class="swiper-slide swiper-lazy">
+            <div class="swiper-lazy-preloader"></div>
+        </div>
+    {{/each}}
 </div>
 
 <div class="swiper-pagination"></div>
