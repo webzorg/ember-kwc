@@ -7,5 +7,5 @@ export default Ember.Route.extend({
 			'selectedType': null,
 			'productFilterValue2': null
 		});
-	}	
+	}
 });

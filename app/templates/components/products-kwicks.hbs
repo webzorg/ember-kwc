@@ -1,6 +1,6 @@
-{{#each model.productsSectionData as |productsSectionData|}}
-	<div {{action 'switchProductSection' (concat "productsSection" productsSectionData.id) (concat "products.product-" productsSectionData.id)}} class="section products-section" id="productsKwicksSection{{productsSectionData.id}}">
-		<div id="productsSection{{productsSectionData.id}}"></div>
+{{#each model.productsSectionData as |productsSectionData index|}}
+	<div {{action 'switchProductSection' (concat "productsSection" index) (concat "products.product-" index)}} class="section products-section" id="productsKwicksSection{{index}}">
+		<div id="productsSection{{index}}"></div>
 		<span class="sectionHeading">{{productsSectionData.productsectionheading}}</span>
 	</div>
 {{/each}}

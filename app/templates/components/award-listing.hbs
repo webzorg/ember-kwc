@@ -1,12 +1,12 @@
 {{#liquid-unless awardSelected class="awardsExpanded"}}
   <div {{action "expandAward"}}>
-    <img src="{{award.medal}}" alt="{{award.awardTitle}}" class="awards-index-img">   
+    {{lazy-image url=award.medal alt=award.awardTitle class="awards-index-img"}}
     <div class="awards-index-heading">{{award.awardTitle}}</div>
   </div>
 {{else}}
   <div id="awardExpanded" {{action "expandAward"}}>
   	
-    {{light-box class="awardExpandedImage" href=award.diploma data-lightbox="awards" data-title=award.awardTitle}}
+    {{custom-light-box class="awardExpandedImage" href=award.diploma data-lightbox="awards" data-title=award.awardTitle}}
     
     <span id="awardExpandedBody"><span id="awardExpandedHeading">{{award.awardTitle}}</span>{{award.awardBody}}</span>
   </div>

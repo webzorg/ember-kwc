@@ -11,11 +11,12 @@ export default Ember.Component.extend({
 	},
 	actions: {
   		expandProduct: function(){
-  			if(!this.get('selected'))
-  			{
+			if(!this.get('selected'))
+			{
   				this.set('selectedProduct', this.get('product'));
   				Ember.$('.products-index-component').removeClass("prouctsExpanded");
   				this.$().closest('.products-index-component').addClass("prouctsExpanded");
+  				this.$().closest('.products-index-component').find('#productExpandedImage').hide();
 			}else{
   				Ember.$('.products-index-component').removeClass("prouctsExpanded");
   				this.set('selectedProduct', null);

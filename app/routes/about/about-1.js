@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function() {
-		return this.store.findRecord('about-section',1);
+		return this.store.findAll('about-section').then(allSections => { return allSections.objectAt(1); });
     }
 });

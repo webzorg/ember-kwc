@@ -18,11 +18,13 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
   ENV.i18n = {
     defaultLocale: 'en'
   };
 
   if (environment === 'development') {
+    ENV.host = "http://localhost:3000";
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -47,7 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.host = "http://api.socialatlas.net";
   }
 
   return ENV;

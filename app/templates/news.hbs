@@ -1,11 +1,16 @@
 {{outlet}}
+{{image-counter class="generic-image-counter"}}
 
 {{#zf-accordion id="newsAccordionWrapper"}}
   {{#each model as |news index|}}
     <li class="accordion-item {{custom-if index 0 "is-active"}}" data-accordion-item>
       <a class="accordion-title">{{news.newsTitle}} </a>
       <div class="accordion-content" data-tab-content>
-        <div>{{light-box class="newsImage" href=news.largeimg data-lightbox="newsImage"}}{{news.newsBody}}</div>
+        <div class="generic-content-images">
+      		{{#each news.imagesArray as |image index|}}
+	        	<div class="generic-image-wrapper {{custom-if index 0 "generic-image-wrapper-first"}}">{{custom-light-box class="generic-image" href=image data-lightbox=news.newsTitle}}</div>
+        	{{/each}}
+      	</div>{{news.newsBody}}
       </div>
     </li>
   {{/each}}

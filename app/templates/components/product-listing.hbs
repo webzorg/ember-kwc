@@ -1,7 +1,6 @@
-{{#liquid-unless selected class="productsExpanded"}}
+{{#unless selected}}
   <div {{action "expandProduct"}}>
-    <img src="{{product.image}}" alt="{{product.name}}" class="products-index-img">
-
+    {{lazy-image url=product.image alt=product.name class="products-index-img"}}
     <div class="products-index-text-wrapper">
       <div class="products-index-heading">{{product.name}}</div>
       <div class="products-index-description">{{product.sdescription}}</div>
@@ -9,10 +8,8 @@
   </div>
 {{else}}
   <div id="productExpanded" {{action "expandProduct"}}>
-    {{light-box class="productExpandedImage" href=product.largeimg data-lightbox="product" data-title=product.name }}
-    <div id="productsExpandedBody">
-      <span id="productExpandedHeading">{{product.name}}</span>{{product.description}}
-    </div>
+    {{custom-light-box class="productExpandedImage" href=product.largeimg data-lightbox="product" data-title=product.name }}
+    <div id="productsExpandedBody"><span id="productExpandedHeading">{{product.name}}</span><div>{{product.description}}</div></div>
   </div>
-{{/liquid-unless}}
+{{/unless}}
 

@@ -1,7 +1,6 @@
-
-{{#each model as |aboutSectionData|}}
-	<div {{action 'switchAboutSection' (concat "aboutSection" aboutSectionData.id) (concat "about.about-" aboutSectionData.id)}} class="section about-section">
-		<div id="aboutSection{{aboutSectionData.id}}"></div>
+{{#each model as |aboutSectionData index|}}
+	<div {{action 'switchAboutSection' (concat "aboutSection" index) (concat "about.about-" index)}} class="section about-section" id="aboutKwicksSection{{index}}">
+		<div id="aboutSection{{index}}"></div>
 		<span class="sectionHeading">{{aboutSectionData.aboutsectionheading}}</span>
 	</div>
 {{/each}}

@@ -4,5 +4,5 @@ import attr from 'ember-data/attr';
 export default Model.extend({
 	aboutsectionheading: attr(),
 	sectionbody: attr(),
-	image: attr()
+	imagesArray: attr()
 });

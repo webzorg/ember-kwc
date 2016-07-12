@@ -29,7 +29,6 @@ export default function(){
     this.reverse('toRight', {duration: 1000})
   );
   */
-  
 
   this.transition(
     this.hasClass('productsLiquidOptionsHandle'),

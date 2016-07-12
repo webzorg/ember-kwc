@@ -23,8 +23,8 @@
   }*/
 }
 
-@mixin products-section-bg($productsSectionBg){
-	background-image: url($productsSectionBg);
+@mixin section-bg($sectionBg){
+	background-image: url($sectionBg);
 	background-repeat:no-repeat;
 	background-position: bottom;
 	background-size: auto 25%;
@@ -71,7 +71,6 @@ $productTextWidthMedium:70%;
     src: url(/assets/eng_font.ttf);
 }
 body{
-
 	img{//resetting some imported global style (fix for chrome)
 		max-width:inherit;
 		@extend .textNotSelectable;
@@ -88,13 +87,24 @@ body{
 		}
 	}
 	a:active{
-		color:$primaryBlack;
+		color:$primaryBlack !important;
 	}
 	a:visited{
 		color:$primaryBlack;
 	}
+	a:active{
+		color:$primaryBlack;
+	}
+	a:focus{
+		color:$primaryBlack;
+	}
+
+	.generic-image-counter{
+		visibility:hidden;
+	}
 }
 #copyright{
+	@extend .textNotSelectable;
 	overflow:hidden;
 	background-color:$primaryWhiteOpaque;
 	border-radius:1em;
@@ -106,6 +116,7 @@ body{
 	line-height:1.5em;
 	white-space:nowrap;
 	margin:0.25%;
+	cursor:default;
 }
 #loader{
 	position:absolute;
@@ -146,9 +157,9 @@ body{
 	width: $desktopContentWidth;
 	height: $desktopTopBuffer;
 	
+	text-shadow: 0.2em 0.2em $primaryLightGray;
 	@extend .textNotSelectable;
 	@extend .gradientFullWidth;
-	cursor:default;
 	a{
 		margin-top:0.3%;
 		position:inherit;
@@ -229,6 +240,7 @@ body{
 		width:100%;
 		z-index:100;
 		li{
+
 			padding:0px 0px 0px 0px;			
 			height:20%;
 			width:100%;	
@@ -262,12 +274,94 @@ body{
 		overflow:auto;
 	}
 }
+
+/* generic lazy image */
+div.generic-content-images{
+	margin:0 0 0 1em;
+	font-size:1em;
+	width:35%;
+	float:right;				
+	.generic-image-wrapper{
+		position:relative;
+		.generic-image{
+			.generic-image-counter{
+				visibility:visible;
+			}
+			position:relative;
+			border-radius:0;
+			float:left;
+			border:0.2em solid transparent;
+			.lazy-image-container{
+				min-height: inherit;
+				.lazy-image{border-radius:0.5em;}
+			}
+			&:hover {
+				border:0.2em solid $primaryRedOpaque;
+				border-radius:0.7em;
+				.lazy-image{opacity:0.9}
+			}
+		}
+	}
+	
+	.generic-image-wrapper-first .generic-image img{
+		width:100%;
+	}
+	.generic-image-wrapper:not(.generic-image-wrapper-first) .generic-image{
+		width:33.3%;
+		//margin:0 2px;
+	}
+}
+
+.section{
+	
+	.generic-image{
+		.generic-image-counter{
+			visibility:visible;
+		}
+	}
+}
+.generic-image-counter{
+	position:absolute;
+	right:0;
+	bottom:0;
+	margin-right:0.3em;
+	margin-bottom:0.3em;
+	
+	text-align:center;
+	border-radius:50%;
+	border:1px solid $primaryRedOpaque;
+	@extend .textNotSelectable;
+	&:hover{
+		background-color:$primaryRedOpaque;
+	}
+	padding:0;
+	font-size:1.5em;
+	font-weight:bold;
+	width:2em;
+	height:2em;
+	background-color:$primaryWhiteOpaque;
+	outline:none;
+	line-height:2em;
+}
+
+.custom-ember-lightbox{
+	.lazy-image-container{
+		.lazy-image{
+			width:100%;
+		}
+	}
+}
+
+.lazy-image-container{
+	min-height:inherit;
+}
+
 /* Index Route */
 .swiper-container {
    	height:100%;
     .swiper-wrapper{
     	.swiper-slide{
-    		background-size:contain;
+    		background-size:cover;
     		background-repeat:no-repeat;
     		background-position:center;
     	}
@@ -297,25 +391,22 @@ body{
 	.aboutHeading{
 		text-indent:1em;
 	}
-	.about-text{
-		.aboutImage{
-			float:right;
-			width:50%;
-			padding:0em 0em 0em 1em;
-			img{
-				width:100%;
-				border-radius:0em 0em 0em 1em;
-			}
-		}
+	.about-content{
 		font-size: 1.2em;
-		div{
-			white-space: pre-wrap;
+		div.about-text{
+			@extend .preWrap;
 		}
 	}
 }
-#aboutSection1{}
-#aboutSection2{}
-#aboutSection3{}
+#aboutKwicksSection0{
+	@include section-bg("/assets/images/about_section/company.png");
+}
+#aboutKwicksSection1{
+	@include section-bg("/assets/images/about_section/vineyards.png");
+}
+#aboutKwicksSection2{
+	@include section-bg("/assets/images/about_section/winery.png");
+}
 /* Products Route */
 #productsOptionsContainer
 {
@@ -403,13 +494,15 @@ body{
 				display:table-cell;
 				width:10%;
 				vertical-align:middle;
-				img{
-					min-width: 4em;
-					width:100%;
+				div{
+					img{
+						min-width: 4em;
+						width:100%;
+					}
 				}
 			}
 			#productsExpandedBody{
-				white-space: pre-wrap;
+				@extend .preWrap;
 				vertical-align:middle;
 				display:table-cell;
 				padding:1%;
@@ -419,16 +512,22 @@ body{
 					display:block;
 					border-bottom: 0.2em solid $primaryDarkGray;
 				}
+				div{//text restraint
+					max-height:15em;
+					overflow:auto;
+				}
 			}
 		}//}}
 	
 		display:inline-block;
 		width:$productWrapperWidth;
 		.products-index-img{
-			display:inline-block;
+			display:inline;
+			img{display:inline-block;
 			width:$productImageWidth;
 			max-width:6em;
-			vertical-align: bottom;
+			vertical-align: bottom;}
+			
 		}
 		.products-index-text-wrapper{
 			display:inline-block;
@@ -448,10 +547,7 @@ body{
 		}
 	}
 }
-.section:not(.kwicks-selected)
-{
-	cursor: pointer;
-}
+
 .section{
 	width:100%;
 	height:100%;
@@ -462,6 +558,11 @@ body{
 		}
 	}	
 }
+.section:not(.kwicks-selected)
+{
+	cursor: pointer;
+}
+
 
 @keyframes sectionHeadingPulse {
   0% {
@@ -491,14 +592,14 @@ body{
 
 .products-section{}
 #productsSections1{}#productsSections2{}#productsSections3{}
+#productsKwicksSection0{
+	@include section-bg("/assets/images/products_section/bottles.png");
+}
 #productsKwicksSection1{
-	@include products-section-bg("/assets/images/products_section/bottles.png");
+	@include section-bg("/assets/images/products_section/qvevri.png");
 }
 #productsKwicksSection2{
-	@include products-section-bg("/assets/images/products_section/qvevri.png");
-}
-#productsKwicksSection3{
-	@include products-section-bg("/assets/images/products_section/spirits.png");
+	@include section-bg("/assets/images/products_section/spirits.png");
 }
 
 .kwicks {
@@ -571,13 +672,12 @@ body{
 	li.accordion-item{
 		.accordion-title{}
 		border-top:1px solid $primaryDarkGray;
-		a{
+		a.accordion-title{
 			color:$primaryBlack;
 			font-size:2em;
-			border:none;
 		}
 		&.is-active{
-			& a{
+			& a.accordion-title{
 				border-bottom:0.2em solid $primaryRed;
 				color:$primaryRed;
 			}
@@ -585,28 +685,18 @@ body{
 		.accordion-content{
 			border:none;
 			width:100%;
-			background-color: rgba(255,255,255,0.2);
+			background-color: rgba(255,255,255,0);
 			&::after {
 			    content:"";
 			    display:block;
 			    clear:both;
 			}
-			div{
-				width:100%;
-				white-space: pre-wrap;
-				//text-indent:1em;
-				font-size:1.2em;
-				//float:right;
-				//text-align:justify;
-				.newsImage{
-					margin-left: 0.6em;
-					text-indent:0;
-					float:right;
-					width:50%;
-					img{width:100%;}
-					border:none;
-				}	
+			@extend .preWrap; 
+			& > *{
+				white-space:normal;
+				word-wrap: default;
 			}
+			font-size:1.2em;
 		}
 	}
 	a:hover{
@@ -620,12 +710,13 @@ body{
 	margin:1.5%;
 }
 
+
 /* Awards Route */
 #awards-index-component-wrapper{
 	.awards-index-component{
 		margin-left:1em;
 		padding:0.5em 0.5em;
-		width:15%;
+		width:13%;
 		display:inline-block;
 		&:hover{
 			-webkit-box-shadow: inset 0px 0px 4px 2px rgba(0,0,0,0.25);
@@ -635,8 +726,10 @@ body{
 		@extend .fastTransition;
 		.awardsExpanded{
 			.awards-index-img{
-				width:100%;
-				max-width:20em;
+				img{
+					width:100%;
+					max-width:20em;
+				}
 			}
 			.awards-index-heading{
 				text-transform: capitalize;
@@ -661,7 +754,7 @@ body{
 					display:table-cell;
 					vertical-align:middle;
 					font-size:1.5em;
-					white-space:pre-wrap;
+					@extend .preWrap;
 					#awardExpandedHeading{
 						display:block;
 						font-size: 2em;
@@ -728,7 +821,7 @@ body{
 		left: $mobileLeftBuffer;
 		width: $mobileContentWidth;
 		height: $mobileTopBuffer;
-		span{
+		a{
 			font-size:2.2em;
 		}
 	}
@@ -752,20 +845,6 @@ body{
 	.products-index-heading{}
 	.products-index-description{}
 }
-#orientation-warning {
-	position:absolute;
-	top:0;
-	left:0;
-	width: 100%; height: 100%;
-	z-index:10000;
-	background-color:rgba(0,0,0,0.8);
-	text-align: center;
-    display:none;
-}
-#orientation-warning td {
-	color:#ccc;
-	vertical-align: middle;
-}
 
 /*******************/
 /* Portrait tweaks */
@@ -777,6 +856,7 @@ body{
 	left:20%;
 	width:80%;
 	background:none !important;
+	font-size:0.9em;
 }
 #logoWrapper{
     border-width:0.2em;
@@ -792,7 +872,6 @@ body{
 			margin-top:3.5%;
 			height:50%;
 			background-position: 10% 50%;
-			//background-size: 15%;
 		}
 		li{
 			float:left;		
@@ -866,9 +945,15 @@ body{
 	}
 }
 
+}//portrait breakpoint
+
+.preWrap{
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
-
-
 .textNotSelectable{
 	-webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
