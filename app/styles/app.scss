@@ -357,6 +357,54 @@ div.generic-content-images{
 }
 
 /* Index Route */
+#index-label{
+	display:table;
+	position:absolute;
+	width:14em;
+	height:7em;
+	padding:0em 1.5em;
+	//white-space:nowrap;
+
+	z-index:1;
+	top:50%;
+	left:10%;
+	transform:translateY(-50%);
+	font-size:1.2em;
+	color: $primaryWhite;
+	background-color: $primaryBlackOpaque;
+	//border-radius:1em;
+	span{
+		display:table-cell;
+		vertical-align:middle;
+		#years8k{
+			display:inline;
+			color:$primaryRed;
+		}
+	}
+}
+
+#index-logo-wrapper{
+	position:absolute;
+	top:50%;
+	right:0;
+	transform:translateY(-50%);
+	z-index:1;
+	width:20em;
+	padding:1em;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ea2e2e+0,ffffff+100 */
+	background: #ea2e2e; /* Old browsers */
+	background: -moz-linear-gradient(left, transparent 0%,$primaryBlack 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, transparent 0%,$primaryBlack 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, transparent 0%,$primaryBlack 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea2e2e', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+	#index-logo{
+		margin-left:8em;
+		width: 8em;
+	}
+}
+
 .swiper-container {
    	height:100%;
     .swiper-wrapper{
@@ -705,8 +753,8 @@ div.generic-content-images{
 	}
 }
 
-.awardsExpanded{
-	width:97% !important;
+.awardsExpanded2{
+	width:25% !important;
 	margin:1.5%;
 }
 
@@ -737,13 +785,13 @@ div.generic-content-images{
 				text-align:center;
 			}
 			#awardExpanded{
-				padding-right:2em;
-				display:table;
+				//padding-right:2em;
+				//display:table;
 				width:100%;
 				.awardExpandedImage{
-					display:table-cell;
-					padding:1em;
-					width:25%;
+					//display:table-cell;
+					//padding:1em;
+					//width:25%;
 					img{
 						width:100%;
 						border-radius:0.5em;

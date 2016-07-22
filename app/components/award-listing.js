@@ -14,10 +14,10 @@ export default Ember.Component.extend({
   			if(!this.get('awardSelected'))
 			{
   				this.set('selectedAward', this.get('award'));
-  				Ember.$('.awards-index-component').removeClass("awardsExpanded");
-  				this.$().closest('.awards-index-component').addClass("awardsExpanded");
+  				Ember.$('.awards-index-component').removeClass("awardsExpanded2");
+  				this.$().closest('.awards-index-component').addClass("awardsExpanded2");
 			}else{
-  				Ember.$('.awards-index-component').removeClass("awardsExpanded");
+  				Ember.$('.awards-index-component').removeClass("awardsExpanded2");
   				this.set('selectedAward', null);
   			}  			
   		}
