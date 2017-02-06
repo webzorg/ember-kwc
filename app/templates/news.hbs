@@ -10,7 +10,7 @@
       		{{#each news.imagesArray as |image index|}}
 	        	<div class="generic-image-wrapper {{custom-if index 0 "generic-image-wrapper-first"}}">{{custom-light-box class="generic-image" href=image data-lightbox=news.newsTitle}}</div>
         	{{/each}}
-      	</div>{{news.newsBody}}
+      	</div>{{{news.newsBody}}}
       </div>
     </li>
   {{/each}}

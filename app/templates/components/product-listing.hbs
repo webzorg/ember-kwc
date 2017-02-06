@@ -9,7 +9,6 @@
 {{else}}
   <div id="productExpanded" {{action "expandProduct"}}>
     {{custom-light-box class="productExpandedImage" href=product.largeimg data-lightbox="product" data-title=product.name }}
-    <div id="productsExpandedBody"><span id="productExpandedHeading">{{product.name}}</span><div>{{product.description}}</div></div>
+    <div id="productsExpandedBody"><span id="productExpandedHeading">{{product.name}}</span><div>{{{product.description}}}</div></div>
   </div>
 {{/unless}}
-

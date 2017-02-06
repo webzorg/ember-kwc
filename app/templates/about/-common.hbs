@@ -4,11 +4,11 @@
 <h1 class="aboutHeading">{{model.aboutsectionheading}}</h1>
 
 <div class="about-content">
-	
+
 	<div class="generic-content-images">
   		{{#each model.imagesArray as |image index|}}
         	<div class="generic-image-wrapper {{custom-if index 0 "generic-image-wrapper-first"}}">{{custom-light-box class="generic-image" href=image data-lightbox=model.aboutsectionheading}}</div>
     	{{/each}}
   	</div>
-  	<div class="about-text">{{model.sectionbody}}</div>
+  	<div class="about-text">{{{model.sectionbody}}}</div>
 </div>

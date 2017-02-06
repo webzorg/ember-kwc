@@ -2,12 +2,13 @@
   <div {{action "expandAward"}}>
     {{lazy-image url=award.medal alt=award.awardTitle class="awards-index-img"}}
     <div class="awards-index-heading">{{award.awardTitle}}</div>
+
   </div>
+
 {{else}}
   <div id="awardExpanded" {{action "expandAward"}}>
-  	
+
     {{custom-light-box class="awardExpandedImage" href=award.diploma data-lightbox="awards" data-title=award.awardTitle}}
-    
+
   </div>
 {{/liquid-unless}}
-
