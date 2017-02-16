@@ -11,7 +11,7 @@ export default {
   "banner": "Chinchuku",
   "about": "chinchao",
   "products": "chinchao",
-  "news": "chinchao",
+  "contact": "chinchao",
   "awards": "chinchao",
   "en": "EN",
   "ka": "KA",

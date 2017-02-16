@@ -11,11 +11,11 @@ export default {
   "banner": "კახური ღვინის მარანი",
   "about": "ჩვენზე",
   "products": "პროდუქცია",
-  "news": "სიახლე",
+  "contact": "კონტაქტი",
   "awards": "ჯილდოები",
   "en": "EN",
   "ka": "KA",
   "ru": "RU",
   "zh": "ZH"
-  
+
 };

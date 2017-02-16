@@ -17,7 +17,7 @@ Router.map(function() {
       this.route('product-1');
       this.route('product-2');
     });
-    this.route('news');
+    this.route('contact');
     this.route('awards');
 });
 

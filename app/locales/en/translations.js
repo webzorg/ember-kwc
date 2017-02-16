@@ -11,7 +11,7 @@ export default {
   "banner": "KAKHURI GVINIS MARANI",
   "about": "About",
   "products": "Products",
-  "news": "News",
+  "contact": "Contact",
   "awards": "Awards",
   "en": "EN",
   "ka": "KA",

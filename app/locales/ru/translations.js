@@ -11,7 +11,7 @@ export default {
   "banner": "kakuri gvinis marani",
   "about": "o nas",
   "products": "praduqti",
-  "news": "novosti",
+  "contact": "kantakt",
   "awards": "nagrajdenia",
   "en": "EN",
   "ka": "KA",
