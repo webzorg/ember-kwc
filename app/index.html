@@ -16,7 +16,12 @@
     {{content-for "head-footer"}}
   </head>
   <body>
-    <div id="loader"></div>
+    <div class="loader">
+      <div class="header-spinner-wrapper">
+        <div class="loader-header" id="loader-header">Kakhuri Gvinis Marani</div>
+        <embed class="loader-svg" type="image/svg+xml" src="/assets/images/ring.svg" />
+      </div>
+    </div>
     {{content-for "body"}}
 
     <script src="assets/vendor.js"></script>
