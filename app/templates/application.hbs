@@ -1,4 +1,16 @@
 <div id="wrapper">
+
+  {{#unless legalityBoolean}}
+    <div class="legality-checker-wrapper">
+      <div class="header-spinner-wrapper">
+        <div class="loader-header" id="loader-header">Kakhuri Gvinis Marani</div>
+        <div class="legality-checker-text">Are you 18+ ?</div>
+        <span {{action "isLegal"}} class="is-legal">Yes</span>
+        <span {{action "isIllegal"}} class="is-illegal">No</span>
+      </div>
+    </div>
+  {{/unless}}
+
 	<div id="banner">{{#link-to "index"}}{{t "banner"}}{{/link-to}}</div>
 	<div id="navigationWrapper">
 		{{partial "navigation"}}
@@ -6,10 +18,9 @@
 
 		<!-- main outlet -->
 		{{liquid-outlet id="liquid1"}}
-			
+
 	{{language-select refreshModel="refreshModel" class="languageWrapper"}}
 	<div id="copyright">
 		copyright 2016 &copy;
 	</div>
 </div>
-

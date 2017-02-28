@@ -52,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = "http://api.socialatlas.net";
+    ENV.host = "http://api.kwcell.ge";
   }
 
   return ENV;
