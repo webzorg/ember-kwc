@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
   }),
   actions: {
     isLegal: function() {
-      localStorage.setItem("legality", true)
+      localStorage.setItem("legality", true);
       Ember.$(".legality-checker-wrapper").hide("slow", function() {
         Ember.$(".legality-checker-wrapper").remove();
       });
