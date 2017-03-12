@@ -1,43 +1,49 @@
 {{outlet}}
 <div class="contact-wrapper">
   <div class="contact-content-container">
-    <div class="contact-content-section1">
-      <div class="company-address-container">
-        <div class="company-address-container2">
-          <div class="company-address-container3">
-            <span class="header">Kakhuri Gvinis Marani</span>
-            <br/>
-            <span class="address">Address:</span> 4a Gamrekeli Turn, Tbilisi, Georgia
-            <br/>
-            <span class="tel">Tel:</span> +995 322 47 40 50
-          </div>
-        </div>
-      </div>
-      <div class="winery-address-container">
-        <div class="winery-address-container2">
-          <div class="winery-address-container3">
-            <span class="header">Winery</span>
-            <br/>
-            <span class="address">Address:</span> 55 Saradjishvili Street, Gurjaani, Georgia
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-content-section2">
-      <div class="section2-image-wrapper">
-        {{lazy-image url="/assets/images/store.jpg" title="KWC Store" class="store-image"}}
-      </div>
-      <div class="store-address-container">
-        <div class="store-address-container2">
-          <div class="store-address-container3">
-            <span class="header">The Store</span>
-            <br/>
-            <span class="address">Address:</span> 21 Tamarashvili Street, Tbilisi, Georgia
-          </div>
-        </div>
-      </div>
 
+    <div class="contact-horizontal-section-1">
+      <div class="contact-horizontal-section-2">
+        {{lazy-image url="/assets/images/contact-badge.png" title="kwc" class="contact-badge"}}
+        <div class="contact-horizontal-section-3">
+          <span class="header">Kakhuri Gvinis Marani</span>
+          <br/>
+          <span class="address">Address:</span> <span>4a Gamrekeli Turn, Tbilisi, Georgia</span>
+          <br/>
+          <span class="tel">Tel:</span> <span>+995 322 47 40 50</span>
+        </div>
+        <img src="/assets/images/office.png" alt="" class="contact-section-image">
+      </div>
     </div>
+
+    <div class="contact-horizontal-section-1">
+      <div class="contact-horizontal-section-2">
+        {{lazy-image url="/assets/images/contact-badge.png" title="kwc" class="contact-badge"}}
+        <div class="contact-horizontal-section-3">
+          <span class="header">Winery</span>
+          <br/>
+          <span class="address">Address:</span> <span>55 Saradjishvili Street, Gurjaani, Georgia</span>
+          <br/>
+          <br/>
+        </div>
+        <img src="/assets/images/factory.png" alt="" class="contact-section-image">
+      </div>
+    </div>
+
+    <div class="contact-horizontal-section-1">
+      <div class="contact-horizontal-section-2">
+        {{lazy-image url="/assets/images/contact-badge.png" title="kwc" class="contact-badge"}}
+        <div class="contact-horizontal-section-3">
+          <span class="header">The Store</span>
+          <br/>
+          <span class="address">Address:</span> <span>21 Tamarashvili Street, Tbilisi, Georgia</span>
+          <br/>
+          <br/>
+        </div>
+        <img src="/assets/images/store.png" alt="" class="contact-section-image">
+      </div>
+    </div>
+
   </div>
 
   {{contact-map class="contact-map-container"}}

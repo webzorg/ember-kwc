@@ -3,14 +3,14 @@
 module.exports = function(environment) {
 
   var ENV = {
-    modulePrefix: 'kwc',
+    modulePrefix: "kwc",
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    baseURL: "/",
+    locationType: "auto",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // e.g. "with-controller": true
       },
       EXTEND_PROTOTYPES: {
         Date: false,
@@ -23,10 +23,10 @@ module.exports = function(environment) {
   };
 
   ENV.i18n = {
-    defaultLocale: 'en'
+    defaultLocale: "en"
   };
 
-  if (environment === 'development') {
+  if (environment === "development") {
     ENV.host = "http://localhost:3000";
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -34,24 +34,24 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    /*ENV['ember-cli-mirage'] = {
+    /*ENV["ember-cli-mirage"] = {
       enabled: false
     }*/
   }
 
-  if (environment === 'test') {
+  if (environment === "test") {
     // Testem prefers this...
-    ENV.baseURL = '/';
-    ENV.locationType = 'none';
+    ENV.baseURL = "/";
+    ENV.locationType = "none";
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = "#ember-testing";
   }
 
-  if (environment === 'production') {
+  if (environment === "production") {
     ENV.host = "http://api.kwcell.ge";
   }
 

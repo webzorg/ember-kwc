@@ -77,7 +77,7 @@ body {
   img {
     //resetting some imported global style (fix for chrome)
     max-width: inherit;
-    @extend .textNotSelectable;
+    @extend .text-not-selectable;
   }
   font-size: 16px;
   color: $primary-black;
@@ -114,7 +114,7 @@ body {
 }
 
 #copyright {
-  @extend .textNotSelectable;
+  @extend .text-not-selectable;
   overflow: hidden;
   background-color: $primary-white-opaque;
   border-radius: 1em;
@@ -138,7 +138,7 @@ $dash: 70;
 $dash-gap: 10;
 $dash-space: $dash * ($max - 1) + $dash-gap * $max;
 $time: 10s;
-$time-step: $time/$max;
+$time-step: '$time/$max';
 
 .loader,
 .legality-checker-wrapper {
@@ -153,13 +153,13 @@ $time-step: $time/$max;
     font-weight: bold;
     margin: 0 .5em .5em;
     padding: .5em;
-    @extend .textNotSelectable;
+    @extend .text-not-selectable;
     cursor: default;
   }
 
   .is-legal,
   .is-illegal {
-    @extend .textNotSelectable;
+    @extend .text-not-selectable;
     font-size: 2em;
     padding: .5em 3.5em;
     -webkit-box-shadow: inset 0 0 4px 2px rgba(0,0,0,0.75);
@@ -186,7 +186,7 @@ $time-step: $time/$max;
       cursor: default;
       font-size: 3.8em;
       padding: .1em;
-      @extend .textNotSelectable;
+      @extend .text-not-selectable;
       text-shadow: .03em .03em $primary-red-opaque;
       white-space: nowrap;
       // background-color: $primary-dark-gray;
@@ -214,7 +214,7 @@ $time-step: $time/$max;
 }
 
 #logoWrapper {
-  background-image: url("/assets/images/logoBW.png");
+  background-image: url("/assets/images/main_logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -235,7 +235,7 @@ $time-step: $time/$max;
   width: $primary-content-width;
   height: $primary-top-buffer;
   text-shadow: 0.2em 0.2em $primary-light-gray;
-  @extend .textNotSelectable;
+  @extend .text-not-selectable;
   @extend .gradientFullWidth;
 
   a {
@@ -263,7 +263,7 @@ $time-step: $time/$max;
     .languageTriggerClass {
       border-radius: 50%;
       border: 1px solid $primary-red-opaque;
-      @extend .textNotSelectable;
+      @extend .text-not-selectable;
 
       &:hover {
         background-color: $primary-red-opaque;
@@ -302,7 +302,7 @@ $time-step: $time/$max;
 }
 
 #navigationWrapper {
-  @extend .textNotSelectable;
+  @extend .text-not-selectable;
   font-size: $navigation-font-size;
   position: absolute;
   top: 0;
@@ -430,7 +430,7 @@ div.generic-content-images {
   text-align: center;
   border-radius: 50%;
   border: 1px solid $primary-red-opaque;
-  @extend .textNotSelectable;
+  @extend .text-not-selectable;
 
   &:hover {
     background-color: $primary-red-opaque;
@@ -748,7 +748,7 @@ div.generic-content-images {
 
   &:hover {
     .sectionHeading {
-      @extend .textNotSelectable;
+      @extend .text-not-selectable;
       -webkit-animation: sectionHeadingPulse 0.8s;
       -moz-animation: sectionHeadingPulse 0.8s;
       -o-animation: sectionHeadingPulse 0.8s;
@@ -895,68 +895,61 @@ div.generic-content-images {
 
 .contact-content-container {
   height: 50%;
+  padding: 1%;
 
-  .company-address-container,
-  .winery-address-container,
-  .store-address-container {
+  .contact-horizontal-section-1 {
+    position: relative;
     display: table;
-    height: 50%;
-    text-align: center;
+    height: 30.33%;
     width: 100%;
+    margin: .5% 0 .5% 0;
+    // margin-bottom: 1.11%;
 
-    .header { font-size: 1.5em; }
+    .header { font-size: 1.1em; }
 
     .address,
     .tel { font-weight: bold; }
   }
 
-  .company-address-container2,
-  .winery-address-container2,
-  .store-address-container2 {
+  .contact-horizontal-section-2 {
     display: table-cell;
     vertical-align: middle;
-  }
+    white-space: nowrap;
 
-  .company-address-container3,
-  .winery-address-container3,
-  .store-address-container3 {
-    background-color: $primary-super-light-gray;
-    border-radius: 1em;
-    display: inline-block;
-    padding: 1em;
-    -webkit-box-shadow: .3em .2em .2em .1em rgba(0,0,0,0.25);
-    -moz-box-shadow: .3em .2em .2em .1em rgba(0,0,0,0.25);
-    box-shadow: .3em .2em .2em .1em rgba(0,0,0,0.25);
-  }
-  .contact-content-section1 {
-    height: 50%;
-    padding: 1em;
-    position: absolute;
-    width: 50%;
-  }
+    background: $primary-gradient; // Old browsers
+    background: -moz-linear-gradient(left, $primary-light-gray 1%, $primary-light-gray 75%, $primary-dark-gray 100%); // FF3.6-15
+    background: -webkit-linear-gradient(left, $primary-light-gray 1%,$primary-light-gray 75%,$primary-dark-gray 100%); // Chrome10-25,Safari5.1-6
+    background: linear-gradient(to right, $primary-super-light-gray 1%, $primary-light-gray 75%, $primary-dark-gray 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9', endColorstr='#1e5799',GradientType=1); // IE6-9
 
-  .contact-content-section2 {
+    div.contact-badge {
+      display: inline-block;
+      height: 100%;
+      margin: 0 1em;
+      width: 15%;
 
-    height: 50%;
-    left: 50%;
-    padding: 1em;
-    position: absolute;
-    width: 50%;
-
-    .section2-image-wrapper {
-      height: 50%;
-      text-align: center;
-
-      .store-image {
-        display: inline-block;
-        height: 100%;
-        max-width: 100%;
+      img.contact-badge {
+        position: absolute;
+        transform: translate(50%, -50%);
+        width: 50%;
       }
     }
 
-    .section2-content-wrapper {
-      height: 50%;
-      text-align: center;
+    .contact-section-image {
+      height: 100%;
+      position: absolute;
+      right: 3em;
+      top: 0;
+    }
+  }
+
+  .contact-horizontal-section-3 {
+
+    display: inline-block;
+    vertical-align: middle;
+    span {
+      // color: green;
+      z-index: 99999;
     }
   }
 }
@@ -984,47 +977,6 @@ div.generic-content-images {
     }
   }
 }
-// #newsAccordionWrapper{
-// 	width:90%;
-// 	margin:0 auto;
-// 	border:none;
-// 	background-color: rgba(0,0,0,0);
-// 	li.accordion-item{
-// 		.accordion-title{}
-// 		border-top:1px solid $primary-dark-gray;
-// 		a.accordion-title{
-// 			color:$primary-black;
-// 			font-size:2em;
-// 		}
-// 		&.is-active{
-// 			& a.accordion-title{
-// 				border-bottom:0.2em solid $primary-red;
-// 				color:$primary-red;
-// 			}
-// 		}
-// 		.accordion-content{
-// 			border:none;
-// 			width:100%;
-// 			background-color: rgba(255,255,255,0);
-// 			&::after {
-// 			    content:"";
-// 			    display:block;
-// 			    clear:both;
-// 			}
-// 			// @extend .preWrap;
-//
-// 			& > *{
-// 				white-space:normal;
-// 				word-wrap: default;
-// 			}
-// 			font-size:1.2em;
-// 		}
-// 	}
-// 	a:hover{
-// 		background-color: $primary-light-gray;
-// 		color:$primary-black;
-// 	}
-// }
 
 .awardsExpanded2 {
   width: 25% !important;
@@ -1106,18 +1058,20 @@ div.generic-content-images {
 // ********************** MEDIA QUERIES**************************
 @include breakpoint(small down) {
 
-  .contact-map-container {
-    display: none;
-  }
-
   .contact-content-container {
+    height: 100%;
 
-    .contact-content-section1 {
-      height: 100%;
+    .contact-horizontal-section-2 {
+      vertical-align: top;
+
+      .contact-section-image {
+        height: 50%;
+        right: 0;
+        top: 50%;
+      }
     }
-
-    .contact-content-section2 {
-      height: 100%;
+    .contact-map-container {
+      display: none;
     }
   }
 
@@ -1268,10 +1222,6 @@ div.generic-content-images {
     }
   }
 
-  #newsAccordionWrapper {
-    margin-top: 1em;
-  }
-
   #awards-index-component-wrapper {
     padding: 2em;
   }
@@ -1318,22 +1268,14 @@ div.generic-content-images {
   }
 }
 
-//portrait breakpoint
-// .preWrap{
-// 	white-space: pre-wrap;       /* Since CSS 2.1 */
-//     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-//     white-space: -pre-wrap;      /* Opera 4-6 */
-//     white-space: -o-pre-wrap;    /* Opera 7 */
-//     word-wrap: break-word;       /* Internet Explorer 5.5+ */
-// }
 .page-container-top-left-box-shadow {
   border-top-left-radius: 1em;
-  -webkit-box-shadow: inset 0.3em 0.2em 0.2em 0.1em rgba(0,0,0,0.25);
-  -moz-box-shadow: inset 0.3em 0.2em 0.2em 0.1em rgba(0,0,0,0.25);
-  box-shadow: inset 0.3em 0.2em 0.2em 0.1em rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset .3em .2em .2em .1em rgba(0,0,0,0.25);
+  -moz-box-shadow: inset .3em .2em .2em .1em rgba(0,0,0,0.25);
+  box-shadow: inset .3em .2em .2em .1em rgba(0,0,0,0.25);
 }
 
-.textNotSelectable {
+.text-not-selectable {
   -webkit-user-select: none;
   /* Chrome/Safari */
   -moz-user-select: none;
