@@ -924,7 +924,6 @@ div.generic-content-images {
 
     div.contact-badge {
       display: inline-block;
-      height: 100%;
       margin: 0 1em;
       width: 15%;
 
@@ -944,12 +943,10 @@ div.generic-content-images {
   }
 
   .contact-horizontal-section-3 {
-
     display: inline-block;
     vertical-align: middle;
     span {
-      // color: green;
-      z-index: 99999;
+      z-index: 100;
     }
   }
 }
