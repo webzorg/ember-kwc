@@ -214,13 +214,15 @@ $time-step: '$time/$max';
 }
 
 #logoWrapper {
-  background-image: url("/assets/images/main_logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border-style: solid;
-  border-width: 0.4em 0.4em 0.8em 0.4em;
-  border-color: $primary-light-gray;
+  height: $primary-top-buffer * 1.5;
+  left: $primary-left-buffer * 1.2;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  img {
+    height: 100%;
+  }
 }
 
 #wrapper {
@@ -1092,6 +1094,19 @@ div.generic-content-images {
 
 
 @include breakpoint(medium down) {
+
+  #logoWrapper {
+    height: $primary-top-buffer * 2;
+    left: $mobile-left-buffer / 2;
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    img {
+      height: 100%;
+    }
+  }
 
   .languageTriggerClass {
     font-size: 2em;
